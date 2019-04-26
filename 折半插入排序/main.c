@@ -8,7 +8,8 @@ int main()
     for(i=1;i<14;i++)
     {
         low=0;
-        hight=i;
+		//注意这里为什么是-1而不是i
+        hight=i-1;
         temp=data[i];
         while (low<=hight)
         {
@@ -22,11 +23,11 @@ int main()
                 hight=mid-1;
             }
         }
-        for(n=i-1;n>=low;n++)
+        for(n=i-1;n>=low;n--)
         {
             data[n+1]=data[n];
         }
-        data[n]=temp;
+        data[low]=temp;
         
     }
     for(n=0;n<14;n++)
