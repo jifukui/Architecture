@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "list.h"
-int ListInit(plist list)
+int ListInit(List * list)
 {
     if(list)
     {
@@ -8,13 +8,13 @@ int ListInit(plist list)
     }
     else
     {
-        list=(plist)malloc(sizeof(List));
+        list=(List*)malloc(sizeof(List));
         list->last=-1;
         return LIST_OK;
     }
     
 }
-int ListDestroy(plist list)
+int ListDestroy(List * list)
 {
     if(list)
     {
@@ -124,14 +124,14 @@ int ListDel(plist list,int index)
 
 }
 
-void ListDisplay(plsit list)
+void ListDisplay(plist list)
 {
     if(list)
     {
         int i;
-        for(i=0;i<list.last;i++)
+        for(i=0;i<list->last;i++)
         {
-            printf("The %d is %d\n",i,list.data[i]);
+            printf("The %d is %d\n",i,list->data[i]);
         }
     }
 }
