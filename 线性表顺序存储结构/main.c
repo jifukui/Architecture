@@ -2,7 +2,7 @@
 #include "list.h"
 int main(void)
 {
-    List  *list=NULL;
+    plist list=NULL;
     int status=-1;
     status=ListInit(list);
     if(status)
@@ -12,7 +12,7 @@ int main(void)
     else
     {
         printf("初始化成功\n");
-        printf("list的内存地址为 %u\n",list);
+        printf("list的内存地址为 %u\n",&list);
     }
     status=ListLength(list);
     printf("线性表的长度为%d\n",status);
