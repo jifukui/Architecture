@@ -6,6 +6,7 @@
 typedef struct{
     int data[MAX];
     int last;
+    int size;
 }List,*plist;
 /**初始化线性表*/
 int ListInit(List *list);

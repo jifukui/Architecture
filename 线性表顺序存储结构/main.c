@@ -2,7 +2,7 @@
 #include "list.h"
 int main(void)
 {
-    plist list=NULL;
+    List * list=NULL;
     int status=-1;
     status=ListInit(list);
     if(status)

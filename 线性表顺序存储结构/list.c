@@ -10,9 +10,13 @@ int ListInit(List * list)
     else
     {
         printf("开始分配地址\n");
-        list=(List*)malloc(sizeof(List));
+        if(NULL==(list=(List*)malloc(sizeof(List))))
+        {
+            printf("分配地址空间失败\n");
+        }
         printf("分配的地址为%u\n",list);
         list->last=0;
+        list->size=MAX;
         return LIST_OK;
     }
     
