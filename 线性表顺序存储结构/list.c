@@ -14,6 +14,7 @@ int ListInit(List * list)
         {
             printf("分配地址空间失败\n");
         }
+        printf("List 数据结构的大小%d\n",sizeof(List));
         printf("分配的地址为%u\n",list);
         list->last=0;
         list->size=MAX;
