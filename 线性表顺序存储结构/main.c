@@ -12,6 +12,7 @@ int main(void)
     else
     {
         printf("初始化成功\n");
+        printf("list的内存地址为 %u\n",list);
     }
     status=ListLength(list);
     printf("线性表的长度为%d\n",status);
@@ -19,6 +20,7 @@ int main(void)
     if(status)
     {
         printf("释放失败\n");
+        printf("失败状态值为%d\n",status);
     }
     else
     {
