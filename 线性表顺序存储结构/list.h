@@ -11,7 +11,7 @@ typedef struct{
 /**初始化线性表*/
 List * ListInit();
 /**销毁线性表*/
-int ListDestroy(List *list);
+List * ListDestroy(List *list);
 /**设置线性表为空*/
 int ListClear(List *list);
 /**获取线性表的长度*/
