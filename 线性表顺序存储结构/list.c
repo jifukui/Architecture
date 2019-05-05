@@ -113,9 +113,9 @@ int LocateElem(plist list,int data)
 int PreElem(plist list,int data)
 {
     int index=LocateElem(list,data);
-    if(index>=0&&index<list->last)
+    if(index>=0)
     {
-        return list->data[index+1];
+        return list->data[index-1];
     }
     else
     {
@@ -126,7 +126,7 @@ int PreElem(plist list,int data)
 int SuccElem(plist list,int data)
 {
     int index=LocateElem(list,data);
-    if(list->last>index)
+    if((list->last-1)>index)
     {
         return list->data[index+1];
     }
