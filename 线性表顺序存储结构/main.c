@@ -60,6 +60,9 @@ int main(void)
     ListDisplay(list);
     status=ListLength(list);
     printf("线性表的长度为%d\n",status);
+    ListClear(list);
+    status=ListLength(list);
+    printf("线性表的长度为%d\n",status);
     list=ListDestroy(list);
     if(list)
     {
