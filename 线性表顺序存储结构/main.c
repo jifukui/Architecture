@@ -24,6 +24,16 @@ int main(void)
         printf("插入数据失败\n");
     }
     ListDisplay(list);
+    status=ListInsert(list,0);
+    if(!status)
+    {
+        printf("删除数据成功\n");
+    }
+    else
+    {
+        printf("删除数据失败\n");
+    }
+    ListDisplay(list);
     status=ListLength(list);
     printf("线性表的长度为%d\n",status);
     list=ListDestroy(list);

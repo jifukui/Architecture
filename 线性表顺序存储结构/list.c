@@ -164,7 +164,27 @@ int ListInsert(plist list,int index,int data)
 }
 int ListDel(plist list,int index)
 {
-
+    if(0==list->last)
+    {
+        return LIST_ERR;
+    }
+    else
+    {
+        if(index>list->last)
+        {
+            return LIST_ERR;
+        }
+        else
+        {
+            int i=0;
+            for(i=index;i<list->last-1;i++)
+            {
+                list->data[i]=list->data[i+1];
+            }
+            list->last--;
+            return LIST_OK;
+        }
+    }
 }
 
 void ListDisplay(plist list)
