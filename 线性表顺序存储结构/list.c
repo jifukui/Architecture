@@ -5,7 +5,6 @@ List * ListInit(List * list)
     if(list)
     {
         printf("这个地址已经存在\n");
-        return LIST_ERR;
     }
     else
     {
@@ -18,9 +17,8 @@ List * ListInit(List * list)
         printf("分配的地址为%u\n",list);
         list->last=0;
         list->size=MAX;
-        return LIST_OK;
     }
-    
+    return list;
 }
 List * ListDestroy(List * list)
 {
