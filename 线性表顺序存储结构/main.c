@@ -24,7 +24,7 @@ int main(void)
         printf("插入数据失败\n");
     }
     ListDisplay(list);
-    status=ListInsert(list,0);
+    status=ListDel(list,0);
     if(!status)
     {
         printf("删除数据成功\n");
@@ -33,6 +33,8 @@ int main(void)
     {
         printf("删除数据失败\n");
     }
+    status=ListEmpty(list);
+    printf("链表是否为空的状态%d\n",status);
     ListDisplay(list);
     status=ListLength(list);
     printf("线性表的长度为%d\n",status);
