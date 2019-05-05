@@ -88,14 +88,14 @@ int LocateElem(plist list,int data)
     if(list)
     {
         int i=0;
-        for(i=0;i<list->last-1;i++)
+        for(i=0;i<(list->last-1);i++)
         {
             if(list->data[i]==data)
             {
                 break;
             }
         }
-        if(i>list->last-1)
+        if(i>(list->last-1))
         {
             return LIST_ERR;
         }
