@@ -4,10 +4,12 @@ int ListInit(List * list)
 {
     if(list)
     {
+        printf("这个地址已经存在\n");
         return LIST_ERR;
     }
     else
     {
+        printf("开始分配地址\n");
         list=(List*)malloc(sizeof(List));
         list->last=-1;
         return LIST_OK;
