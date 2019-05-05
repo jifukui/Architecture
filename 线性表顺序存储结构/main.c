@@ -4,8 +4,8 @@ int main(void)
 {
     List * list=NULL;
     int status=-1;
-    status=ListInit(list);
-    if(status)
+    list=ListInit(list);
+    if(!list)
     {
         printf("初始化失败\n");
     }
@@ -16,8 +16,8 @@ int main(void)
     }
     status=ListLength(list);
     printf("线性表的长度为%d\n",status);
-    status=ListDestroy(list);
-    if(status)
+    list=ListDestroy(list);
+    if(list)
     {
         printf("释放失败\n");
         printf("失败状态值为%d\n",status);

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "list.h"
-int ListInit(List * list)
+List * ListInit(List * list)
 {
     if(list)
     {
@@ -22,18 +22,15 @@ int ListInit(List * list)
     }
     
 }
-int ListDestroy(List * list)
+List * ListDestroy(List * list)
 {
     if(list)
     {
         free(list);
         list=NULL;
-        return LIST_OK;
+        
     }
-    else
-    {
-        return LIST_ERR;
-    }
+    return list;
     
 }
 int ListClear(List *list)
