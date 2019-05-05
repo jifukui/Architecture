@@ -14,6 +14,16 @@ int main(void)
         printf("初始化成功\n");
         printf("list的内存地址为 %u\n",list);
     }
+    status=ListInsert(list,0,45);
+    if(!status)
+    {
+        printf("插入数据成功\n");
+    }
+    else
+    {
+        printf("插入数据失败\n");
+    }
+    ListDisplay(list);
     status=ListLength(list);
     printf("线性表的长度为%d\n",status);
     list=ListDestroy(list);
