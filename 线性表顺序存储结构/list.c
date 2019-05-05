@@ -72,7 +72,7 @@ int GetElem(plist list,int index)
 {
     if(list)
     {
-        if(index>list->last)
+        if(index>list->last-1||index<0)
         {
             return LIST_ERR;
         }
@@ -113,7 +113,7 @@ int LocateElem(plist list,int data)
 int PreElem(plist list,int data)
 {
     int index=LocateElem(list,data);
-    if(index>0)
+    if(index>=0)
     {
         return list->data[index-1];
     }
@@ -139,7 +139,7 @@ int ListInsert(plist list,int index,int data)
 {
     if(list->size>index)
     {
-        if(list->last>=index)
+        if(list->last>=index&&index>=0)
         {
             int i;
             for(i=list->last;i<index;i--)
@@ -170,7 +170,7 @@ int ListDel(plist list,int index)
     }
     else
     {
-        if(index>list->last)
+        if(index>list->last||index<0)
         {
             return LIST_ERR;
         }

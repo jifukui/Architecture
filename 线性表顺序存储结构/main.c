@@ -15,6 +15,10 @@ int main(void)
         printf("list的内存地址为 %u\n",list);
     }
     status=ListInsert(list,0,45);
+    status=ListInsert(list,1,55);
+    status=ListInsert(list,2,66);
+    status=ListInsert(list,3,77);
+    status=ListInsert(list,4,88);
     if(!status)
     {
         printf("插入数据成功\n");
@@ -24,6 +28,16 @@ int main(void)
         printf("插入数据失败\n");
     }
     ListDisplay(list);
+    status=LocateElem(list,77);
+    printf("The 77 is at %d\n",status);
+    status=LocateElem(list,100);
+    printf("The 100 is at %d\n",status);
+    status=GetElem(list,2);
+    printf("链表的第3个数据为%d\n",status);
+    status=GetElem(list,8);
+    printf("链表的第9个数据为%d\n",status);
+    status=ListDel(list,-1);
+    printf("链表的第-1个数据为%d\n",status);
     status=ListDel(list,0);
     if(!status)
     {
@@ -33,6 +47,14 @@ int main(void)
     {
         printf("删除数据失败\n");
     }
+    status=PreElem(list,88);
+    printf("数据88的前一个数据是%d\n",status);
+    status=PreElem(list,45);
+    printf("数据45的前一个数据是%d\n",status);
+    status=SuccElem(list,88);
+    printf("数据88的后一个数据是%d\n",status);
+    status=SuccElem(list,45);
+    printf("数据45的后一个数据是%d\n",status);
     status=ListEmpty(list);
     printf("链表是否为空的状态%d\n",status);
     ListDisplay(list);
