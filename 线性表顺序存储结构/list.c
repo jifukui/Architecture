@@ -139,12 +139,12 @@ int ListInsert(plist list,int index,int data)
 {
     if(list->size>index)
     {
-        if(list->last>index)
+        if(list->last>=index)
         {
             int i;
             for(i=list->last;i<index;i--)
             {
-                list->data[i]=list->data[i-1];
+                list->data[i+1]=list->data[i];
             }
             list->data[i]=data;
             list->last++;
