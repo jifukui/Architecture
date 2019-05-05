@@ -12,7 +12,7 @@ int ListInit(List * list)
         printf("开始分配地址\n");
         list=(List*)malloc(sizeof(List));
         printf("分配的地址为%u\n",list);
-        list->last=-1;
+        list->last=0;
         return LIST_OK;
     }
     
@@ -35,7 +35,7 @@ int ListClear(List *list)
 {
     if(list)
     {
-        list->last=-1;
+        list->last=0;
         return LIST_OK;
     }
     else
