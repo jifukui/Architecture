@@ -152,7 +152,7 @@ int ListInsert(plist list,int index,int data)
         }
         else
         {
-            return LIST_ERR
+            return LIST_ERR;
         }
     }
     else
