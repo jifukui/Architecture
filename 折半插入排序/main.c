@@ -13,7 +13,7 @@ int main()
         temp=data[i];
         while (low<=hight)
         {
-            mid=(hight+low)/2;
+            mid=low+((hight+low) >> 1);
             if(temp>=data[mid])
             {
                 low=mid+1;
