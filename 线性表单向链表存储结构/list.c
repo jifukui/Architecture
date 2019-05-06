@@ -247,9 +247,11 @@ void ListDisplay(pList list)
         ListNode *node;
         node=list->head;
         unsigned int i=0;
+        len=list->length;
         while((len--)&&node)
         {
             printf("The %d is %d\n",i,node->data);
+            node=node->next;
             i++;
         }
     }
