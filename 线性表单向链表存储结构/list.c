@@ -185,6 +185,7 @@ int ListInsert(pList list,int index,int data)
                     current->next=node;
                 }
                 list->length++;
+                return LIST_OK;
             }
             else
             {
