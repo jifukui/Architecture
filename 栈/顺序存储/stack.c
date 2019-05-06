@@ -7,6 +7,7 @@ sStack * StackInit()
     stack=(psStack)malloc(sizeof(sStack));
     if(stack)
     {
+        printf("栈创建成功\n");
         stack->top=-1;
     }
     return stack;
