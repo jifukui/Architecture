@@ -1,6 +1,6 @@
 #ifndef _STACK_H
 #define _STACK_H
-#define MAX 8
+#define MAX 4
 #define STACK_OK 0
 #define STACK_ERR -1
 #define TRUE 1
