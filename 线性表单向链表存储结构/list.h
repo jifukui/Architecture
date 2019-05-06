@@ -4,16 +4,16 @@
 #define LIST_OK 0
 typedef struct{
     int data;
-    ListNode * next;
+    struct ListNode * next;
 }ListNode,*plistnode;
 typedef struct{
     plistnode head;
     unsigned int length;
 }List,*pList;
 /**初始化线性表*/
-ListNode * ListInit();
+List * ListInit();
 /**销毁线性表*/
-int ListDestroy(ListNode *list);
+int ListDestroy(List *list);
 /**设置线性表为空*/
 int ListClear(List *list);
 /**获取线性表的长度*/
