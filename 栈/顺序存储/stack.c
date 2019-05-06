@@ -38,7 +38,7 @@ int  StackLength(sStack *stack)
 }
 bool StackEmpty(sStack *stack)
 {
-    if(stack&&stack->top==-1)
+    if(stack&&(stack->top==-1))
     {
         return TRUE;
     }
@@ -47,7 +47,7 @@ bool StackEmpty(sStack *stack)
 }
 bool StackFull(sStack *stack)
 {
-    if(stack&&stack->top==(MAX-1))
+    if(stack&&(stack->top==(MAX-1)))
     {
         return TRUE;
     }
