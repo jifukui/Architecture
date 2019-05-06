@@ -165,7 +165,7 @@ int ListInsert(pList list,int index,int data)
         {
             ListNode *node=NULL;
             ListNode *current=NULL;
-            if(NULL==(node=(plistnode)malloc(sizeof(ListNode))))
+            if(NULL!=(node=(plistnode)malloc(sizeof(ListNode))))
             {
                 node->data=data;
                 node->next=NULL;
