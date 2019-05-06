@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "stack.h"
-static const unsigned int StackMask=MAX-1;
+static const  int StackMask=MAX-1;
 sStack * StackInit()
 {
     sStack *stack=NULL;
