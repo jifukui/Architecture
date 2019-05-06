@@ -6,6 +6,7 @@
 #define TRUE 1
 #define FALSE 0
 typedef int bool;
+const unsigned int Mask=MAX-1;
 typedef struct stack
 {
     int data[MAX];
