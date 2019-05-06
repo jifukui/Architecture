@@ -9,7 +9,7 @@ typedef int bool;
 typedef struct stack
 {
     int data[MAX];
-    unsigned top;
+    unsigned int top;
 }sStack,*psStack;
 sStack * StackInit();
 void StackDestory(sStack *stack);
