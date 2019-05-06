@@ -80,7 +80,7 @@ int GetTop(sStack *stack)
 }
 void StackDisplay(sStack *stack)
 {
-    if(stack)
+    if(stack&&stack->top>=0)
     {
         int i;
         for(i=0;i<=stack->top;i++)
