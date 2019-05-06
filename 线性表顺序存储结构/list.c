@@ -113,7 +113,7 @@ int LocateElem(plist list,int data)
 int PreElem(plist list,int data)
 {
     int index=LocateElem(list,data);
-    if(index>=0)
+    if(index>0)
     {
         return list->data[index-1];
     }
