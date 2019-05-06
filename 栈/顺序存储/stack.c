@@ -47,7 +47,7 @@ bool StackEmpty(sStack *stack)
 }
 bool StackFull(sStack *stack)
 {
-    if(stack&&(stack->top==(MAX-1)))
+    if(stack&&(stack->top==StackMask))
     {
         return TRUE;
     }
@@ -55,9 +55,9 @@ bool StackFull(sStack *stack)
 }
 bool Push(sStack *stack,int value)
 {
-    printf("MAX-1 is %d\n",MAX-1);
+    printf("MAX-1 is %d\n",StackMask);
     printf("stack->top is %d\n",stack->top);
-    if((MAX-1)>stack->top)
+    if(StackMask>stack->top)
     {
         printf("more\n");
     }
@@ -66,7 +66,7 @@ bool Push(sStack *stack,int value)
         printf("less\n");
     }
     
-    if(stack&&((MAX-1)>stack->top))
+    if(stack&&(StackMask>stack->top))
     {
         stack->data[++stack->top]=value;
         return TRUE;
