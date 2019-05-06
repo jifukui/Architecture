@@ -38,7 +38,7 @@ int  StackLength(sStack *stack)
 }
 bool StackEmpty(sStack *stack)
 {
-    if(stack&&stack->top<0)
+    if(stack&&stack->top==-1)
     {
         return TRUE;
     }
@@ -55,7 +55,7 @@ bool StackFull(sStack *stack)
 }
 bool Push(sStack *stack,int value)
 {
-    if(stack&&(MAX-1)>stack->top)
+    if(stack&&((MAX-1)>stack->top))
     {
         stack->data[++stack->top]=value;
         return TRUE;
