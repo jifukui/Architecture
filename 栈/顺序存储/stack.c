@@ -56,9 +56,7 @@ bool StackFull(sStack *stack)
 }
 bool Push(sStack *stack,int value)
 {
-    printf("MAX-1 is %d\n",StackMask);
-    printf("stack->top is %d\n",stack->top);
-    if(StackMask>stack->top)
+    if(StackMask>(stack->top))
     {
         printf("more\n");
     }
