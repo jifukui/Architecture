@@ -105,7 +105,8 @@ int LocateElem(pList list,int data)
     if(list)
     {
         int i=0;
-        plistnode node;
+        plistnode node=NULL;
+        node=list->head;
         for(i=0;i<list->length;i++)
         {
             if(!node)
@@ -116,6 +117,7 @@ int LocateElem(pList list,int data)
             {
                 break;
             }
+            node=node->next;
         }
         if(i==list->length)
         {
