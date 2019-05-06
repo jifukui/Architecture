@@ -87,7 +87,7 @@ int main()
     {
         printf("栈不为满\n");
     }
-    //StackDisplay(stack);
+    StackDisplay(stack);
     status=Push(stack,55);
     if(status)
     {
