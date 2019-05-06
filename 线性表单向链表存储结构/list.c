@@ -168,6 +168,7 @@ int ListInsert(pList list,int index,int data)
             if(NULL==(node=(plistnode)malloc(sizeof(ListNode))))
             {
                 node->data=data;
+                node->next=NULL;
                 if(index==0)
                 {
                     node->next=list->head;
@@ -176,14 +177,14 @@ int ListInsert(pList list,int index,int data)
                 else
                 {
                     current=Getindex(list,index-1);
-                    if(!current)
+                    if(!current&&(index!=list->length))
                     {
                         return LIST_ERR;
                     }
                     node->next=current->next;
                     current->next=node;
-                    list->length++;
                 }
+                list->length++;
             }
             else
             {
@@ -225,7 +226,7 @@ int ListDel(pList list,int index)
                 return LIST_ERR;
             }
             current=before->next;
-            if(!current)
+            if(!current&&(index!=list->length))
             {
                 return LIST_ERR;
             }
