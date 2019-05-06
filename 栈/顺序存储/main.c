@@ -67,7 +67,7 @@ int main()
     }
     status=StackLength(stack);
     printf("当前栈的长度为%d\n",status);
-    status=GetTop(status);
+    status=GetTop(stack);
     printf("当前栈的栈顶的值为%d\n",status);
     status=Push(stack,44);
     if(status)
@@ -108,9 +108,9 @@ int main()
     }
     status=StackLength(stack);
     printf("当前栈的长度为%d\n",status);
-    status=GetTop(status);
+    status=GetTop(stack);
     printf("当前栈的栈顶的值为%d\n",status);
-    status=Pop(status);
+    status=Pop(stack);
     printf("当前取栈的栈顶的值为%d\n",status);
     status=StackFull(stack);
     if(status)
@@ -123,7 +123,7 @@ int main()
     }
     status=StackLength(stack);
     printf("当前栈的长度为%d\n",status);
-    status=GetTop(status);
+    status=GetTop(stack);
     printf("当前栈的栈顶的值为%d\n",status);
     StackClear(stack);
     status=StackEmpty(stack);
