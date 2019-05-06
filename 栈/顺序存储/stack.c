@@ -55,6 +55,16 @@ bool StackFull(sStack *stack)
 }
 bool Push(sStack *stack,int value)
 {
+    printf("stack->top is %d\n",stack->top);
+    if((MAX-1)>stack->top)
+    {
+        printf("more\n");
+    }
+    else
+    {
+        printf("less\n");
+    }
+    
     if(stack&&((MAX-1)>stack->top))
     {
         stack->data[++stack->top]=value;
