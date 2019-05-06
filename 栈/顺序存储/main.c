@@ -135,6 +135,7 @@ int main()
     {
         printf("栈不为空\n");
     }
+    status=StackLength(stack);
     printf("当前栈的长度为%d\n",status);
     StackDestory(stack);
     return 0;
