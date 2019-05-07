@@ -111,6 +111,6 @@ int main()
         printf("队列不为空\n");
     }
     printf("队列长度为%d\n",QueueLength(queue));
-    QueueDestory();
+    QueueDestory(queue);
     return 0;
 }
