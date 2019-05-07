@@ -88,10 +88,14 @@ int  Pop(sStack *stack)
 {
     if(stack&&stack->top>0)
     {
+        int data;
         sStackNode *current;
         current=stack->top;
         stack->len--;
-        return current->data;
+        data=current->data;
+        stack->top=current->pre;
+        free(current);
+        return data;
     }
     return STACK_ERR;
 }
