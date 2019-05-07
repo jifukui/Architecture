@@ -80,7 +80,7 @@ int main()
         printf("队列不为满\n");
     }
     printf("队列长度为%d\n",QueueLength(queue));
-    printf("De获取队列头元素%d\n"，DeQueue(queue));
+    printf("De获取队列头元素%d\n",DeQueue(queue));
     printf("队列长度为%d\n",QueueLength(queue));
     QueueDisplay(queue);
     if(EnQueue(queue,55))

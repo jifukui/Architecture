@@ -32,7 +32,7 @@ int QueueLength(squeue *queue)
     }
     return QUEUE_ERR;
 }
-unsigned int QueueEmpty(squeue *queue)
+int QueueEmpty(squeue *queue)
 {
     if(queue)
     {
@@ -43,7 +43,7 @@ unsigned int QueueEmpty(squeue *queue)
     }
     return FALSE;
 }
-unsigned int QueueFull(squeue *queue)
+int QueueFull(squeue *queue)
 {
     if(queue)
     {
@@ -54,7 +54,7 @@ unsigned int QueueFull(squeue *queue)
     }
     return FALSE;
 }
-unsigned int EnQueue(squeue *queue,int value)
+int EnQueue(squeue *queue,int value)
 {
     if(queue&&!QueueFull(queue))
     {
