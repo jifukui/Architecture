@@ -58,8 +58,8 @@ int EnQueue(squeue *queue,int value)
 {
     if(queue&&!QueueFull(queue))
     {
-        queue->data[queue->tail]=value;
-        queue->tail=(queue->tail+1)&QueueMask;
+        queue->data[queue->tail++]=value;
+        queue->tail&=QueueMask;
         return TRUE;
     }
     return FALSE;
