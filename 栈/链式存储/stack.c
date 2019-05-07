@@ -45,7 +45,7 @@ int  StackLength(sStack *stack)
 {
     if(stack)
     {
-        return stack->len+1;
+        return stack->len;
     }
     return STACK_ERR;
 }
@@ -97,7 +97,7 @@ int  Pop(sStack *stack)
 }
 int GetTop(sStack *stack)
 {
-    if(stack&&stack->top>=0)
+    if(stack&&stack->top>0)
     {
         return ((sStackNode *)(stack->top))->data;
     }
@@ -115,7 +115,6 @@ void StackDisplay(sStack *stack)
             printf("The %d is %d\n",i,node->data);
             node=node->pre;
             i++;
-        }
-        
+        }        
     }
 }
