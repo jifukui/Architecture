@@ -90,10 +90,11 @@ void QueueDisplay(squeue*queue)
         int i=0;
         int index;
         index=queue->head;
-        while((queue->tail!=index))
+        while((queue->tail<index))
         {
             printf("The %d is %d\n",i,queue->data[index++]);
             index=index&QueueMask;
+            i++;
         }
     }
 }
