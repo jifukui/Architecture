@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "bt.h"
+const int BTMask=MAX;
 sBinaryTree* StoreTreeInit()
 {
     sBinaryTree * bt=NULL;
@@ -12,7 +13,7 @@ int StoreTree(sBinaryTree *bt,int value)
 {
     if(bt)
     {
-        if(bt->length<MAX)
+        if(bt->length<BTMask)
         {
             bt->data[bt->length++]=value;
             return BT_OK;
