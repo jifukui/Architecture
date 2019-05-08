@@ -18,6 +18,7 @@ void QueueDestory(squeue *queue)
 {
     if(queue)
     {
+        QueueClear(queue);
         free(queue);
         queue=NULL;
     }
