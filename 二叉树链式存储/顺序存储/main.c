@@ -17,6 +17,7 @@ int main()
             {
                 break;
             }
+            printf("输入数据\n");
             data=getchar();
         }
         StoreTreeEnd(bt);

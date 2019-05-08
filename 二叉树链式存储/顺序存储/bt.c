@@ -27,9 +27,10 @@ void DisplayStoreTree(sBinaryTree *bt)
     {
         int i,index=0;
         i=bt->length;
-        while (index++,i--)
+        while (i--)
         {
             printf("The %d is %c \n",index,bt->data[index]);
+            index++;
         }
     }
 }
