@@ -8,8 +8,7 @@ squeue *QueueInit()
     queue=(squeue *)malloc(sizeof(squeue));
     if(queue)
     {
-        queue->tail=NULL;
-        queue->head=NULL;
+        queue->head=queue->tail=NULL;
         queue->length=0;
     }
     return queue;
@@ -34,6 +33,7 @@ void QueueClear(squeue *queue)
         free(node);
         node=current;
     }
+    queue->head=queue->tail=NULL;
     queue->length=0;
 }
 int QueueLength(squeue *queue)
