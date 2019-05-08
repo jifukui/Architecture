@@ -117,6 +117,52 @@ int main()
         printf("队列不为空\n");
     }
     printf("队列长度为%d\n",QueueLength(queue));
+    if(EnQueue(queue,11))
+    {
+        printf("插入队列成功\n");
+    }
+    else
+    {
+        printf("插入队列失败\n");
+    }
+    status=QueueEmpty(queue);
+    if(status)
+    {
+        printf("队列为空\n");
+    }   
+    else
+    {
+        printf("队列不为空\n");
+    }
+    if(EnQueue(queue,22))
+    {
+        printf("插入队列成功\n");
+    }
+    else
+    {
+        printf("插入队列失败\n");
+    }
+    status=GetHeadQueue(queue);
+    printf("获取队列头元素%d\n",status);
+    printf("队列长度为%d\n",QueueLength(queue));
+    if(EnQueue(queue,33))
+    {
+        printf("插入队列成功\n");
+    }
+    else
+    {
+        printf("插入队列失败\n");
+    }
+    if(QueueFull(queue))
+    {
+        printf("队列满\n");
+    }
+    else
+    {
+        printf("队列不为满\n");
+    }
+    printf("队列长度为%d\n",QueueLength(queue));
+    QueueDisplay(queue);
     QueueDestory(queue);
     return 0;
 }
