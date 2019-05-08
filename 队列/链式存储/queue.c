@@ -119,7 +119,7 @@ int GetHeadQueue(squeue *queue)
 {
     if(queue&&(!QueueEmpty(queue)))
     {
-        return ((sQueueNode *)(queue->head))->data;
+        return (int)((sQueueNode *)(queue->head))->data;
     }
     return FALSE;
 }
@@ -134,7 +134,7 @@ void QueueDisplay(squeue*queue)
         node=queue->head;
         while((index--)&&node)
         {
-            printf("The %d is %d\n",i,node->data);
+            printf("The %d is %d\n",i,(int)node->data);
             i++;
             node=node->next;
         }
