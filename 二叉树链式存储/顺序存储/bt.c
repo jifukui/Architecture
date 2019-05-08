@@ -6,7 +6,7 @@ sBinaryTree* StoreTreeInit()
 {
     sBinaryTree * bt=NULL;
     bt=(sBinaryTree*)malloc(sizeof(sBinaryTree));
-    bt->length++;
+    bt->length=0;
     return bt;
 }
 int StoreTree(sBinaryTree *bt,int value)

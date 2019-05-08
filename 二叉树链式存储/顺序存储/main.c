@@ -8,9 +8,11 @@ int main()
     if(bt)
     {
         printf("初始华顺序二叉树成功\n");
+        printf("输入数据\n");
         data=getchar();
         while (data!='#')
         {
+            printf("输入数据是:%c\n",data);
             if(!StoreTree(bt,data))
             {
                 break;
@@ -18,6 +20,7 @@ int main()
             data=getchar();
         }
         StoreTreeEnd(bt);
+        DisplayStoreTree(bt);
     }
     else
     {
