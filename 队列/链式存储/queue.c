@@ -70,12 +70,16 @@ int EnQueue(squeue *queue,int value)
     if(queue&&!QueueFull(queue))
     {
         sQueueNode *node=NULL;
+        sQueueNode *current=NULL;
         node=(sQueueNode*)malloc(sizeof(sQueueNode));
         if(node)
         {
             node->data=value;
             node->next=NULL;
-            ((sQueueNode *)(queue->tail))->next=node;
+            current=queue->tail;
+            current->next=node;
+            queue->tail=node
+            //((sQueueNode *)(queue->tail))->next=node;
             queue->length++;
             return TRUE;
         }
@@ -92,6 +96,8 @@ int DeQueue(squeue *queue)
         {
             sQueueNode *node=NULL;
             node=queue->head;
+            queue->head=node->next;
+            free(node);
             queue->length--;
         }
         return value;
