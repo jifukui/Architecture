@@ -78,10 +78,6 @@ int EnQueue(squeue *queue,int value)
             node->next=NULL;
             ((sQueueNode *)queue->tail)->next=node;
             queue->tail=node;
-            if(QueueEmpty(queue))
-            {
-                queue->head=node;
-            }
             queue->length++;
             return TRUE;
         }
