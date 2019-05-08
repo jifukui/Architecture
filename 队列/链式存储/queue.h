@@ -7,7 +7,8 @@
 #define FALSE 0
 typedef struct queue
 {
-    struct sQueueNode* head,*tail;
+    struct sQueueNode* head;
+    struct sQueueNode* tail;
     int length;
 }squeue,*psqueue;
 typedef struct queuenode
