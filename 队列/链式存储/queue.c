@@ -9,7 +9,7 @@ squeue *QueueInit()
     if(queue)
     {
         queue->head=queue->tail=NULL;
-        length=0;
+        queue->length=0;
     }
     return queue;
 }
@@ -33,7 +33,7 @@ void QueueClear(squeue *queue)
         free(node);
         node=current;
     }
-    
+    queue->length=0;
 }
 int QueueLength(squeue *queue)
 {
@@ -102,7 +102,7 @@ int GetHeadQueue(squeue *queue)
 {
     if(queue&&(!QueueEmpty(queue)))
     {
-        return queue->data[queue->head];
+        return ((sQueueNode *)(queue->head))->data;
     }
     return FALSE;
 }
