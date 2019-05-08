@@ -47,7 +47,7 @@ int QueueFull(squeue *queue)
 {
     if(queue)
     {
-        if(((queue->tail+2)&QueueMask)==queue->head)
+        if(((queue->tail+1)&QueueMask)==queue->head)
         {
             return TRUE;
         }
