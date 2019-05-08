@@ -77,7 +77,7 @@ int DeQueue(squeue *queue)
 }
 int GetHeadQueue(squeue *queue)
 {
-    if(queue&&(!QueueFull(queue)))
+    if(queue&&(!QueueEmpty(queue)))
     {
         return queue->data[queue->head];
     }
