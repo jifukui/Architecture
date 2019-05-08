@@ -37,8 +37,6 @@ int main()
     {
         printf("队列不为空\n");
     }
-    printf("队列头 %d\n",queue->head);
-    printf("队列尾 %d\n",queue->tail);
     if(EnQueue(queue,22))
     {
         printf("插入队列成功\n");
@@ -105,8 +103,6 @@ int main()
     {
         printf("队列不为满\n");
     }
-    printf("队列头 %d\n",queue->head);
-    printf("队列尾 %d\n",queue->tail);
     printf("队列长度为%d\n",QueueLength(queue));
     QueueDisplay(queue);
     QueueClear(queue);
