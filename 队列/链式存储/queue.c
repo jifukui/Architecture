@@ -8,6 +8,8 @@ squeue *QueueInit()
     queue=(squeue *)malloc(sizeof(squeue));
     if(queue)
     {
+        queue->tail=NULL;
+        queue->head=NULL;
         queue->length=0;
     }
     return queue;
@@ -69,17 +71,11 @@ int EnQueue(squeue *queue,int value)
     if(queue&&!QueueFull(queue))
     {
         sQueueNode *node=NULL;
-        sQueueNode *current=NULL;
         node=(sQueueNode*)malloc(sizeof(sQueueNode));
         if(node)
         {
             node->data=value;
             node->next=NULL;
-            current=queue->tail;
-            printf("The queue is %u\n",queue);
-            printf("The queue->tail is %u\n",queue->tail);
-            printf("The current is %u\n",current);
-            current->next=node;
             queue->tail=node;
             queue->length++;
             return TRUE;

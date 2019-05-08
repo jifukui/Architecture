@@ -14,7 +14,7 @@ typedef struct queue
 typedef struct queuenode
 {
     int data;
-    struct sQueueNode* next;  
+    struct sQueueNode *next;  
 }sQueueNode,*spQueueNode;
 squeue *QueueInit();
 void QueueDestory(squeue *queue);
