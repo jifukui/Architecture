@@ -8,21 +8,9 @@ squeue *QueueInit()
     queue=(squeue *)malloc(sizeof(squeue));
     if(queue)
     {
-        sQueueNode *node=NULL;
-        node=(sQueueNode *)malloc(sizeof(sQueueNode));
-        if(node)
-        {
-            queue->head=node;
-            ((sQueueNode*)queue->head)->next=NULL;
-            queue->tail=queue->head;
-            queue->length=0;
-        }
-        else
-        {
-            queue=NULL;
-        }
-        
-        
+        queue->head=NULL;
+        queue->tail=NULL;
+        queue->length=0;        
     }
     return queue;
 }
@@ -46,7 +34,8 @@ void QueueClear(squeue *queue)
         free(node);
         node=current;
     }
-    queue->head=queue->tail=NULL;
+    queue->head=NULL;
+    queue->tail=NULL;
     queue->length=0;
 }
 int QueueLength(squeue *queue)
@@ -89,8 +78,16 @@ int EnQueue(squeue *queue,int value)
         {
             node->data=value;
             node->next=NULL;
-            ((sQueueNode *)queue->tail)->next=node;
-            queue->tail=node;
+            if(QueueEmpty(queue))
+            {
+                queue->tail=node;
+                queue->head=node;
+            }
+            else
+            {
+                ((sQueueNode *)queue->tail)->next=node;
+                queue->tail=node;
+            }
             queue->length++;
             return TRUE;
         }
@@ -119,7 +116,8 @@ int GetHeadQueue(squeue *queue)
 {
     if(queue&&(!QueueEmpty(queue)))
     {
-        return (int)((sQueueNode *)(queue->head))->data;
+        int data=(int)((sQueueNode *)(queue->head))->data;
+        return data;
     }
     return FALSE;
 }
@@ -134,7 +132,8 @@ void QueueDisplay(squeue*queue)
         node=queue->head;
         while((index--)&&node)
         {
-            printf("The %d is %d\n",i,(int)node->data);
+            int data=(int)node->data
+            printf("The %d is %d\n",i,data);
             i++;
             node=node->next;
         }
