@@ -13,7 +13,7 @@ int StoreTree(sBinaryTree *bt,int value)
 {
     if(bt)
     {
-        if(bt->length<BTMask)
+        if((bt->length+1)<BTMask)
         {
             bt->data[bt->length++]=value;
             return BT_OK;
