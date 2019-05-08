@@ -45,7 +45,8 @@ int main()
     {
         printf("插入队列失败\n");
     }
-    printf("获取队列头元素%d\n",GetHeadQueue(queue));
+    status=GetHeadQueue(queue);
+    printf("获取队列头元素%d\n",status);
     printf("队列长度为%d\n",QueueLength(queue));
     if(EnQueue(queue,33))
     {
