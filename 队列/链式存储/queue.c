@@ -77,7 +77,7 @@ int EnQueue(squeue *queue,int value)
             node->data=value;
             node->next=NULL;
             queue->tail=node;
-            if(QueueEmpty)
+            if(QueueEmpty())
             {
                 queue->head=node;
             }
@@ -121,6 +121,7 @@ void QueueDisplay(squeue*queue)
         int index;
         index=queue->length;
         sQueueNode *node=NULL;
+        node=queue->head;
         while((index--)&&node)
         {
             printf("The %d is %d\n",i,node->data);
