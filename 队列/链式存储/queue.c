@@ -13,7 +13,7 @@ squeue *QueueInit()
         if(node)
         {
             queue->head=node;
-            queue->head->next=NULL;
+            ((sQueueNode*)queue->head)->next=NULL;
             queue->tail=queue->head;
             queue->length=0;
         }
