@@ -78,7 +78,7 @@ int EnQueue(squeue *queue,int value)
             node->next=NULL;
             current=queue->tail;
             current->next=node;
-            queue->tail=node
+            queue->tail=node;
             //((sQueueNode *)(queue->tail))->next=node;
             queue->length++;
             return TRUE;
