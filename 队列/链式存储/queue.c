@@ -77,7 +77,7 @@ int EnQueue(squeue *queue,int value)
             node->data=value;
             node->next=NULL;
             queue->tail=node;
-            if(QueueEmpty())
+            if(QueueEmpty(queue))
             {
                 queue->head=node;
             }
