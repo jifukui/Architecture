@@ -10,6 +10,7 @@ typedef struct BinaryTree
 }sBinaryTree,*spBinaryTree;
 sBinaryTree* StoreTreeInit();
 int StoreTree(sBinaryTree *bt,int value);
+void StoreTreeDestory(sBinaryTree *bt);
 void DisplayStoreTree(sBinaryTree *bt);
 void StoreTreeEnd(sBinaryTree *bt);
 #endif

@@ -9,6 +9,14 @@ sBinaryTree* StoreTreeInit()
     bt->length=0;
     return bt;
 }
+void StoreTreeDestory(sBinaryTree *bt)
+{
+    if(bt)
+    {
+        free(bt);
+        bt=NULL;
+    }
+}
 int StoreTree(sBinaryTree *bt,int value)
 {
     if(bt)
@@ -36,5 +44,5 @@ void DisplayStoreTree(sBinaryTree *bt)
 }
 void StoreTreeEnd(sBinaryTree *bt)
 {
-    bt->data[bt->length]='#';
+    bt->data[bt->length++]='#';
 }

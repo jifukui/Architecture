@@ -23,6 +23,7 @@ int main()
         }
         StoreTreeEnd(bt);
         DisplayStoreTree(bt);
+        StoreTreeDestory(bt);
     }
     else
     {
