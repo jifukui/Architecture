@@ -66,11 +66,14 @@ int EnQueue(squeue *queue,int value)
 }
 int DeQueue(squeue *queue)
 {
-    if(queue&&(!QueueFull(queue)))
+    if(queue)
     {
         int value;
         value=GetHeadQueue(queue);
-        queue->head=(queue->head+1)&QueueMask;
+        if(value)
+        {
+            queue->head=(queue->head+1)&QueueMask;
+        }
         return value;
     }
     return FALSE;
