@@ -132,7 +132,7 @@ void QueueDisplay(squeue*queue)
         node=queue->head;
         while((index--)&&node)
         {
-            int data=(int)node->data
+            int data=(int)node->data;
             printf("The %d is %d\n",i,data);
             i++;
             node=node->next;
