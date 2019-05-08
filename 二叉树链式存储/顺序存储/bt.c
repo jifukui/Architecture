@@ -32,7 +32,7 @@ void DisplayStoreTree(sBinaryTree *bt)
         }
     }
 }
-void StoreTreeEnd(sBinaryTree bt)
+void StoreTreeEnd(sBinaryTree *bt)
 {
     bt->data[bt->length]='#';
 }

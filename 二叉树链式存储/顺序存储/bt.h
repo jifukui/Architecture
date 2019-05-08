@@ -11,5 +11,5 @@ typedef struct BinaryTree
 sBinaryTree* StoreTreeInit();
 int StoreTree(sBinaryTree *bt,int value);
 void DisplayStoreTree(sBinaryTree *bt);
-void StoreTreeEnd(sBinaryTree bt);
+void StoreTreeEnd(sBinaryTree *bt);
 #endif
