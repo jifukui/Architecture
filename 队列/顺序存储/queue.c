@@ -47,7 +47,7 @@ int QueueFull(squeue *queue)
 {
     if(queue)
     {
-        if(QueueLength==MAX)
+        if((queue->tail+2)==queue->head)
         {
             return TRUE;
         }

@@ -65,6 +65,9 @@ int main()
     {
         printf("队列不为满\n");
     }
+    printf("队列长度为%d\n",QueueLength(queue));
+    QueueDisplay(queue);
+    printf("De获取队列头元素%d\n",DeQueue(queue));
     if(EnQueue(queue,44))
     {
         printf("插入队列成功\n");
@@ -82,13 +85,9 @@ int main()
         printf("队列不为满\n");
     }
     printf("队列长度为%d\n",QueueLength(queue));
-    printf("队列头 %d\n",queue->head);
-    printf("队列尾 %d\n",queue->tail);
     QueueDisplay(queue);
     printf("De获取队列头元素%d\n",DeQueue(queue));
     printf("队列长度为%d\n",QueueLength(queue));
-    printf("队列头 %d\n",queue->head);
-    printf("队列尾 %d\n",queue->tail);
     QueueDisplay(queue);
     if(EnQueue(queue,55))
     {
