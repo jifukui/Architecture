@@ -8,7 +8,6 @@ squeue *QueueInit()
     queue=(squeue *)malloc(sizeof(squeue));
     if(queue)
     {
-        queue->head=queue->tail=NULL;
         queue->length=0;
     }
     return queue;
