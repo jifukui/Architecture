@@ -48,7 +48,7 @@ int QueueEmpty(squeue *queue)
 {
     if(queue)
     {
-        if(0==queue->length)
+        if(!queue->length)
         {
             return TRUE;
         }
@@ -77,6 +77,10 @@ int EnQueue(squeue *queue,int value)
             node->data=value;
             node->next=NULL;
             queue->tail=node;
+            if(QueueEmpty)
+            {
+                queue->head=node;
+            }
             queue->length++;
             return TRUE;
         }
