@@ -5,12 +5,6 @@
 #define QUEUE_ERR -1
 #define TRUE 1
 #define FALSE 0
-typedef struct BinaryTreeNode
-{
-    int data;
-    struct sBinaryTreeNode *lchild;
-    struct sBinaryTreeNode *rchild;
-}sBinaryTreeNode,*spBinaryTreeNode;
 typedef struct queue
 {
     struct sQueueNode* head;

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "queue.h"
+#include "bt.h"
 static const unsigned int QueueMask=MAX-1;
 squeue *QueueInit()
 {

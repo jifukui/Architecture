@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "bt.h"
 #include "stack.h"
+#include "queue.h"
 const int BTMask=MAX;
 sBinaryTree* StoreTreeInit()
 {

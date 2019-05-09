@@ -6,12 +6,6 @@
 #define TRUE 1
 #define FALSE 0
 typedef int bool;
-typedef struct BinaryTreeNode
-{
-    int data;
-    struct sBinaryTreeNode *lchild;
-    struct sBinaryTreeNode *rchild;
-}sBinaryTreeNode,*spBinaryTreeNode;
 typedef struct stack
 {
     struct sStackNode *top;
