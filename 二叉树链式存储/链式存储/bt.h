@@ -1,0 +1,18 @@
+#ifndef _BT_H_
+#define _BT_H_
+#include "queue.h"
+#define MAX 16
+#define BT_OK 1
+#define BT_ERR 0
+typedef struct BinaryTree
+{
+    sBinaryTreeNode *root;
+    squeue *queue;
+    int length;
+}sBinaryTree,*spBinaryTree;
+sBinaryTree* StoreTreeInit();
+int StoreTree(sBinaryTree *bt,int value);
+void StoreTreeDestory(sBinaryTree *bt);
+void DisplayStoreTree(sBinaryTree *bt);
+void StoreTreeEnd(sBinaryTree *bt);
+#endif
