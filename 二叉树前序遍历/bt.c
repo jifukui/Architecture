@@ -94,13 +94,17 @@ void TreeFrontErgodic(sBinaryTree *bt)
         while (!StackEmpty(fstack))
         {
             node=Pop(fstack);
-            data=node->data;
-            printf("The %d is %d\n",index,data);
-            if(node->rchild)
+            while (node)
             {
-                Push(fstack,node->rchild);
+                data=node->data;
+                printf("The %d is %d\n",index,data);
+                if(node->rchild)
+                {
+                    Push(fstack,node->rchild);
+                }
+                node=node->lchild;
             }
-            node=node->lchild;
+            
         }
         
     }
