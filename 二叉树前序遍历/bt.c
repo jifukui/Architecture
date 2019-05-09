@@ -80,7 +80,7 @@ void TreeFrontErgodic(sBinaryTree *bt)
 {
     if(bt)
     {
-        sStack fstack=NULL;
+        sStack *fstack=NULL;
         fstack=StackInit();
         if(!fstack)
         {
