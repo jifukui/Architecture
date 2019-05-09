@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "stack.h"
-#include "bt.h"
 static const  int StackMask=MAX;
 sStack * StackInit()
 {

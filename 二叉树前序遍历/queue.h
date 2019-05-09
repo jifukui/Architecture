@@ -1,6 +1,6 @@
 #ifndef _QUEUE_H
 #define _QUEUE_H
-#define MAX 16
+#include "TreeNode.h"
 #define QUEUE_OK 0
 #define QUEUE_ERR -1
 #define TRUE 1

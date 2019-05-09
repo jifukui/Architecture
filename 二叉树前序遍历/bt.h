@@ -1,14 +1,8 @@
 #ifndef _BT_H_
 #define _BT_H_
-#define MAX 16
+#include "queue.h"
 #define BT_OK 1
 #define BT_ERR 0
-typedef struct BinaryTreeNode
-{
-    int data;
-    struct sBinaryTreeNode *lchild;
-    struct sBinaryTreeNode *rchild;
-}sBinaryTreeNode,*spBinaryTreeNode;
 typedef struct BinaryTree
 {
     sBinaryTreeNode *root;
