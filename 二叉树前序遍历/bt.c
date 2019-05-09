@@ -64,8 +64,11 @@ int StoreTree(sBinaryTree *bt,int value)
                         else
                         {
                             pnode->rchild=node;
-                            DeQueue(bt->queue);
                         }   
+                    }
+                    if(bt->length%2)
+                    {
+                        DeQueue(bt->queue);
                     }
                 }
                 bt->length++;
