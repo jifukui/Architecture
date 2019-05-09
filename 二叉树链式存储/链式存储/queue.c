@@ -113,7 +113,7 @@ sBinaryTreeNode *DeQueue(squeue *queue)
     }
     return FALSE;
 }
-const sBinaryTreeNode * GetHeadQueue(squeue *queue)
+const sBinaryTreeNode *const  GetHeadQueue(squeue *queue)
 {
     if(queue&&(!QueueEmpty(queue)))
     {

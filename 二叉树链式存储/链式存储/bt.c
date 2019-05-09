@@ -44,7 +44,7 @@ int StoreTree(sBinaryTree *bt,int value)
                 node->data=value;
                 node->lchild=node->rchild=NULL;
             }
-            if(EnQueue(bt->queue),node)
+            if(EnQueue(bt->queue,node))
             {
                 if(!bt->length)
                 {
@@ -55,7 +55,7 @@ int StoreTree(sBinaryTree *bt,int value)
                     pnode=GetHeadQueue(bt->queue);
                     if(node&&pnode)
                     {
-                        if(i%2)
+                        if(bt->length%2)
                         {
                             pnode->lchild=node;
                         }
@@ -81,7 +81,7 @@ void DisplayStoreTree(sBinaryTree *bt)
         i=bt->length;
         while (i--)
         {
-            printf("The %d is %c \n",index,bt->data[index]);
+            //printf("The %d is %c \n",index,bt->data[index]);
             index++;
         }
     }
