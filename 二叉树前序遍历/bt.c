@@ -66,7 +66,7 @@ int StoreTree(sBinaryTree *bt,int value)
                             pnode->rchild=node;
                         }   
                     }
-                    if(bt->length%2)
+                    if((bt->length%2)==0)
                     {
                         DeQueue(bt->queue);
                     }
