@@ -8,8 +8,8 @@
 typedef struct BinaryTreeNode
 {
     int data;
-    sBinaryTreeNode *lchild;
-    sBinaryTreeNode *rchild;
+    struct sBinaryTreeNode *lchild;
+    struct sBinaryTreeNode *rchild;
 }sBinaryTreeNode,*spBinaryTreeNode;
 typedef struct queue
 {
