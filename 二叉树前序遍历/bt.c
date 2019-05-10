@@ -76,6 +76,7 @@ int StoreTree(sBinaryTree *bt,int value)
             }
         }
     }
+    printf("存储树失败%c\n",value);
     return BT_ERR;
 }
 /**前序遍历树*/

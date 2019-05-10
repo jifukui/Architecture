@@ -21,7 +21,6 @@ int main()
             getchar();
             data=getchar();
         }
-        //DisplayStoreTree(bt);
         TreeFrontErgodic(bt);
         StoreTreeDestory(bt);
     }
