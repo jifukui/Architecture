@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "bt.h"
+#include "stack.h"
+#include "queue.h"
 const int BTMask=MAX;
 sBinaryTree* StoreTreeInit()
 {
@@ -34,17 +36,10 @@ int StoreTree(sBinaryTree *bt,int value)
         sBinaryTreeNode *pnode=NULL;
         node=(sBinaryTreeNode *)malloc(sizeof(sBinaryTreeNode));
         if(bt->length<BTMask&&node)
-        {
-            if('@'==value)
-            {
-                node=NULL;
-            }
-            else
-            {
-                node->data=value;
-                node->lchild=node->rchild=NULL;
-            }
-            if(EnQueue(bt->queue,node))
+        { 
+            node->data=value;
+            node->lchild=node->rchild=NULL;
+			if(EnQueue(bt->queue,node))
             {
                 if(!bt->length)
                 {
@@ -53,7 +48,7 @@ int StoreTree(sBinaryTree *bt,int value)
                 else
                 {
                     pnode=GetHeadQueue(bt->queue);
-                    if(node&&pnode)
+                    if(node->data!='@'&&pnode->data!='@')
                     {
                         if(bt->length%2)
                         {
@@ -62,16 +57,57 @@ int StoreTree(sBinaryTree *bt,int value)
                         else
                         {
                             pnode->rchild=node;
-                            DeQueue(bt->queue);
                         }   
                     }
+                    
                 }
-                bt->length++;
-                return BT_OK;   
             }
+			if ((bt->length % 2) == 0&&bt->length!=0)
+			{
+				DeQueue(bt->queue);
+			}
+			bt->length++;
+			return BT_OK;
         }
     }
+    printf("store Tree Error %c\n",value);
     return BT_ERR;
+}
+void TreeFrontErgodic(sBinaryTree *bt)
+{
+    if(bt)
+    {
+        sStack *fstack=NULL;
+        fstack=StackInit();
+        if(!fstack)
+        {
+            return NULL;
+        }
+        sBinaryTreeNode *node=NULL;
+        int len=bt->length;
+        node=bt->root;
+        int index=0;
+        int data;
+        Push(fstack,node);
+        while (!StackEmpty(fstack))
+        {
+            node=Pop(fstack);
+            while (node&&node->data!='@')
+            {
+                data=node->data;
+                printf("The %d is %c\n",index,data);
+                index++;
+                if(node->rchild)
+                {
+                    Push(fstack,node->rchild);
+                }
+                node=node->lchild;
+            }
+            
+        }
+        
+    }
+    return NULL;
 }
 void DisplayStoreTree(sBinaryTree *bt)
 {
