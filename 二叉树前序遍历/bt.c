@@ -36,17 +36,10 @@ int StoreTree(sBinaryTree *bt,int value)
         sBinaryTreeNode *pnode=NULL;
         node=(sBinaryTreeNode *)malloc(sizeof(sBinaryTreeNode));
         if(bt->length<BTMask&&node)
-        {
-            if('@'==value)
-            {
-                node=NULL;
-            }
-            else
-            {
-                node->data=value;
-                node->lchild=node->rchild=NULL;
-            }
-            if(EnQueue(bt->queue,node))
+        { 
+            node->data=value;
+            node->lchild=node->rchild=NULL;
+			if(EnQueue(bt->queue,node))
             {
                 if(!bt->length)
                 {
@@ -55,7 +48,7 @@ int StoreTree(sBinaryTree *bt,int value)
                 else
                 {
                     pnode=GetHeadQueue(bt->queue);
-                    if(node&&pnode)
+                    if(node->data!='@'&&pnode->data!='@')
                     {
                         if(bt->length%2)
                         {
@@ -66,20 +59,20 @@ int StoreTree(sBinaryTree *bt,int value)
                             pnode->rchild=node;
                         }   
                     }
-                    if((bt->length%2)==0)
-                    {
-                        DeQueue(bt->queue);
-                    }
+                    
                 }
-                bt->length++;
-                return BT_OK;   
             }
+			if ((bt->length % 2) == 0&&bt->length!=0)
+			{
+				DeQueue(bt->queue);
+			}
+			bt->length++;
+			return BT_OK;
         }
     }
-    printf("存储树失败%c\n",value);
+    printf("store Tree Error %c\n",value);
     return BT_ERR;
 }
-/**前序遍历树*/
 void TreeFrontErgodic(sBinaryTree *bt)
 {
     if(bt)
@@ -99,7 +92,7 @@ void TreeFrontErgodic(sBinaryTree *bt)
         while (!StackEmpty(fstack))
         {
             node=Pop(fstack);
-            while (node)
+            while (node&&node->data!='@')
             {
                 data=node->data;
                 printf("The %d is %c\n",index,data);
