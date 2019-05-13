@@ -169,7 +169,7 @@ void TreeEedErgodic(sBinaryTree *bt)
             node=Pop(fstack);
             while (node&&node->data!='@')
             { 
-                Push(fstack,node->lchild);
+                Push(fstack,node);
                 node=node->lchild;
             }
             node=Pop(fstack);
