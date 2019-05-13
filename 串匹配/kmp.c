@@ -38,7 +38,7 @@ int GetPostion(char *str1,char *str2)
             i++;
         }
         printf("The j is %d\n",j);
-        if(j==strlen)
+        if(j==strlen(str2))
         {
             return i-j;
         }
