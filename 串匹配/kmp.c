@@ -11,17 +11,18 @@ int GetPostion(char *str1,char *str2)
     if(str1&&str2)
     {
         Getmode(str1,mode);
-        GetSupermode(str1,super);
+        //GetSupermode(str1,super);
         printf("普通模式数组为:\n");
         for(i=0;i<strlen(str1);i++)
         {
             printf("The %d is %d\n",i,mode[i]);
         }
+        /*
         printf("超级模式数组为:\n");
         for(i=0;i<strlen(str1);i++)
         {
             printf("The %d is %d\n",i,super[i]);
-        }
+        }*/
         i=0;
         j=0;
         while (i<strlen(str1)||i<strlen(str2))
