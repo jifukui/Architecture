@@ -169,24 +169,28 @@ void TreeEedErgodic(sBinaryTree *bt)
             node=Pop(fstack);
             while (node&&node->data!='@')
             { 
-                Push(fstack,node);
+                if(!node->flag)
+                {
+                    Push(fstack,node);
+                }
                 node=node->lchild;
             }
             node=Pop(fstack);
             if(node->flag)
             {
-
+                printf("The %d is %c\n",index,data);
+                index++;
             }   
             else
             {
                 node->flag=1;
                 data=node->data;
-                printf("The %d is %c\n",index,data);
-                index++;
                 Push(fstack,node);
             }         
-            Push(fstack,node->rchild);
-            node=node->rchild;
+            if(node->rchild)
+            {
+                Push(fstack,node->rchild);
+            }
         }
         
     }
