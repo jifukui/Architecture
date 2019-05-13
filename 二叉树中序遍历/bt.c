@@ -130,10 +130,7 @@ void TreeMidErgodic(sBinaryTree *bt)
             node=Pop(fstack);
             while (node&&node->data!='@')
             {
-                if(node->lchild)
-                {
-                    Push(fstack,node);
-                }
+                Push(fstack,node);
                 node=node->lchild;
             }
             if(!StackEmpty(fstack))
