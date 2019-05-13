@@ -46,7 +46,7 @@ int GetPostion(char *str1,char *str2)
 }
 void Getmode(char *str,unsigned int *mode)
 {
-    int i=-1;
+    int i=0;
     int j=-1;
     mode[i]=-1;
     int index=0;
@@ -88,9 +88,7 @@ void GetSupermode(char *str,unsigned int *mode)
             else
             {
                 mode[i]=mode[j];
-            }
-            
-            
+            }         
         }
         else
         {
