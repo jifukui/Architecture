@@ -131,20 +131,18 @@ void TreeMidErgodic(sBinaryTree *bt)
             node=Pop(fstack);
             while (node&&node->data!='@')
             {
-                
-                if(node->lchild)
-                {
-                    Push(fstack,node);
-                }
+                Push(fstack,node);
                 node=node->lchild;
             }
             if(!StackEmpty(fstack))
             {
-                index++;
+                node=Pop(fstack);
                 data=node->data;
                 printf("The %d is %c\n",index,data);
+                index++;
+                Push(fstack,node->rchild);
             }
-            Push(fstack,node->rchild);
+            
         }
         
     }
@@ -170,11 +168,8 @@ void TreeEedErgodic(sBinaryTree *bt)
         {
             node=Pop(fstack);
             while (node&&node->data!='@')
-            {
-                if(node->lchild)
-                {
-                    Push(node->lchild);
-                }
+            { 
+                Push(node->lchild);
                 node=node->lchild;
             }
             node=Pop(fstack);
@@ -185,12 +180,11 @@ void TreeEedErgodic(sBinaryTree *bt)
             else
             {
                 node->flag=1;
+                printf("The %d is %c\n",index,data);
+                index++;
                 Push(fstack,node);
             }         
-            if(node->rchild)
-            {
-                Push(fstack,node->rchild);
-            }
+            Push(fstack,node->rchild);
             node=node->rchild;
         }
         
