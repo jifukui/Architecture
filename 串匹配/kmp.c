@@ -37,6 +37,7 @@ int GetPostion(char *str1,char *str2)
             }
             i++;
         }
+        printf("The j is %d\n",j);
         if(j==strlen)
         {
             return i-j;
@@ -74,7 +75,7 @@ void GetSupermode(char *str,unsigned int *mode)
 {
     int i=0;
     int j=-1;
-    mode[i]=-1;
+    mode[i]=0;
     int index=0;
     while (i<strlen(str))
     {
