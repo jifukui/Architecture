@@ -50,7 +50,9 @@ void Getmode(char *str,unsigned int *mode)
     int j=-1;
     mode[i]=-1;
     int index=0;
-    while (i<strlen(str))
+    int len;
+    len=strlen(str);
+    while (i<len)
     {
         if(j==-1||str[i]==str[j])
         {
