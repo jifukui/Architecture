@@ -51,6 +51,7 @@ void Getmode(char *str,unsigned int *mode)
     mode[i]=-1;
     int index=0;
     int len;
+    printf("The str is %s\n",str);
     len=strlen(&str[0]);
     while (i<len)
     {
