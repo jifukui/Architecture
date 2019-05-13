@@ -12,7 +12,7 @@ int main(int argc,char **argv)
             printf("错误的匹配串\n");
             return 0;
         }
-        pos=GetPostion(*argv[1],*argv[2]);
+        pos=GetPostion(argv[1],argv[2]);
         printf("postion is %d\n",pos);
     }
     return 0;
