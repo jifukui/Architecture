@@ -10,10 +10,8 @@ int GetPostion(char *str1,char *str2)
     int j=0;
     if(str1&&str2)
     {
-        printf("The str1 is %s\n",str1);
-        printf("The str2 is %s\n",str2);
-        Getmode(str2,mode);
-        GetSupermode(str2,super);
+        Getmode(str1,mode);
+        GetSupermode(str1,super);
         printf("普通模式数组为:\n");
         for(i=0;i<strlen(str2);i++)
         {
@@ -53,7 +51,6 @@ void Getmode(char *str,unsigned int *mode)
     mode[i]=-1;
     int index=0;
     int len;
-    printf("The str is %s\n",str);
     len=strlen(&str[0]);
     while (i<len)
     {
@@ -74,7 +71,7 @@ void Getmode(char *str,unsigned int *mode)
 }
 void GetSupermode(char *str,unsigned int *mode)
 {
-    int i=-1;
+    int i=0;
     int j=-1;
     mode[i]=-1;
     int index=0;
