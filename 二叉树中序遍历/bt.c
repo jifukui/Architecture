@@ -138,6 +138,7 @@ void TreeMidErgodic(sBinaryTree *bt)
             }
             if(!StackEmpty(fstack))
             {
+                node=Pop(fstack);
                 index++;
                 data=node->data;
                 printf("The %d is %c\n",index,data);
