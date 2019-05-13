@@ -164,7 +164,7 @@ void TreeEedErgodic(sBinaryTree *bt)
         int index=0;
         int data;
         Push(fstack,node);
-        while (!StackEmpty(bt))
+        while (!StackEmpty(fstack))
         {
             node=Pop(fstack);
             while (node&&node->data!='@')
@@ -172,28 +172,30 @@ void TreeEedErgodic(sBinaryTree *bt)
                 if(!node->flag)
                 {
                     Push(fstack,node);
-                    break;
                 }
+				else
+				{
+					break;
+				}
                 node=node->lchild;
             }
-            node=Pop(fstack);
-            if(node->flag)
-            {
-                data=node->data;
-                printf("The %d is %c\n",index,data);
-                index++;
-            }   
-            else
-            {
-                node->flag=1;
-                Push(fstack,node);
-            }         
-            if(node->rchild)
-            {
-                Push(fstack,node->rchild);
-            }
+			if (!StackEmpty(fstack))
+			{
+				node = Pop(fstack);
+				if (node->flag)
+				{
+					data = node->data;
+					printf("The %d is %c\n", index, data);
+					index++;	
+				}
+				else
+				{
+					node->flag = 1;
+					Push(fstack, node);
+				}	
+				Push(fstack, node->rchild);
+			}
         }
-        
     }
 }
 void DisplayStoreTree(sBinaryTree *bt)
