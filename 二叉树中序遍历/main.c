@@ -23,7 +23,7 @@ int main()
         }
         printf("前序遍历树为：\n");
         TreeFrontErgodic(bt);
-        printf("后续遍历树为:\n");
+        printf("中续遍历树为:\n");
         TreeMidErgodic(bt);
         StoreTreeDestory(bt);
     }
