@@ -10,6 +10,8 @@ int GetPostion(char *str1,char *str2)
     int j=0;
     if(str1&&str2)
     {
+        printf("The str1 is %s\n",str1);
+        printf("The str2 is %s\n",str2);
         Getmode(str2,mode);
         GetSupermode(str2,super);
         printf("普通模式数组为:\n");
