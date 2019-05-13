@@ -7,6 +7,7 @@ int GetPostion(char *str1,char *str2)
     unsigned int mode[256];
     unsigned int super[256];
     int i=0;
+    int j=0;
     if(str)
     {
         Getmode(str2,&mode);
