@@ -84,13 +84,15 @@ void Getmode(char *str,unsigned int *mode)
         {
             i++;
             j++;
-            mode[i]=j;     
+            mode[i]=j;    
+            index++; 
         }
         else
         {
             j=mode[j];
+            index++;
         }
-        index++;
+        
     }
     printf("普通算法使用的计算次数为%d\n",index);
 }
@@ -108,12 +110,14 @@ void GetSupermode(char *str,unsigned int *mode)
             i++;
             j++;
             mode[i]=mode[i]==mode[j]?mode[j]:j;
+            index++;
         }
         else
         {
             j=mode[j];
+            index++;
         }
-        index++;
+        
     }
     printf("超级算法使用的计算次数为%d\n",index);
 }
