@@ -224,7 +224,7 @@ int TreeDeep(sBinaryTree *bt)
         while (!StackEmpty(fstack))
         {
             node=Pop(fstack);
-            deep=IPop(deep);
+            deep=IPop(dstack);
             while (node&&node->data!='@')
             {
                 Push(fstack,node);
