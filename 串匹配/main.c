@@ -14,8 +14,8 @@ int main(int argc,char **argv)
         }
         pos=GetPostion(argv[1],argv[2]);
         printf("postion is %d\n",pos);
-        //pos=GetSuperPostion(argv[1],argv[2]);
-        //printf("postion is %d\n",pos);
+        pos=GetSuperPostion(argv[1],argv[2]);
+        printf("postion is %d\n",pos);
     }
     return 0;
 }
