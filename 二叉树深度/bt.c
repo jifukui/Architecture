@@ -247,6 +247,7 @@ int TreeDeep(sBinaryTree *bt)
                 index++;
                 Push(fstack,node->rchild);
                 deep++;
+                IPush(dstack,deep);
             }
             
         }
