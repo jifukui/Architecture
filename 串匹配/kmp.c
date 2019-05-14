@@ -28,6 +28,7 @@ int GetPostion(char *str1,char *str2)
             i++;
         }
         printf("The j is %d\n",j);
+        printf("The i is %d\n",i);
         if(j==strlen(str2))
         {
             return i-j;
@@ -60,6 +61,7 @@ int GetSuperPostion(char *str1,char *str2)
             i++;
         }
         printf("The j is %d\n",j);
+        printf("The i is %d\n",i);
         if(j==strlen(str2))
         {
             return i-j;
@@ -81,8 +83,7 @@ void Getmode(char *str,unsigned int *mode)
         {
             i++;
             j++;
-            mode[i]=j;
-            
+            mode[i]=j;     
         }
         else
         {
