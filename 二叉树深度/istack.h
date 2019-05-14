@@ -1,6 +1,6 @@
 #ifndef _ISTACK_H
 #define _ISTACK_H
-#define MAX 4
+#include "queue.h"
 #define STACK_OK 0
 #define STACK_ERR -1
 #define TRUE 1
