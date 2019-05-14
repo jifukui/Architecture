@@ -107,14 +107,7 @@ void GetSupermode(char *str,unsigned int *mode)
         {
             i++;
             j++;
-            if(mode[i]!=mode[j])
-            {
-                mode[i]=j;
-            }
-            else
-            {
-                mode[i]=mode[j];
-            }         
+            mode[i]=mode[i]==mode[j]?mode[j]:j;
         }
         else
         {
