@@ -13,7 +13,7 @@ int GetPostion(char *str1,char *str2)
         Getmode(str2,mode);
         //GetSupermode(str2,super);
         printf("普通模式数组为:\n");
-        for(i=0;i<strlen(str1);i++)
+        for(i=0;i<strlen(str2);i++)
         {
             printf("The %d is %d\n",i,mode[i]);
         }
