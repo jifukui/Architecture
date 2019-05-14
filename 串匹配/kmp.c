@@ -24,10 +24,7 @@ int GetPostion(char *str1,char *str2)
             {
                 j=mode[j];
             }
-            else
-            {
-                j++;
-            }
+            j++;
             i++;
         }
         printf("The j is %d\n",j);
@@ -60,10 +57,7 @@ int GetSuperPostion(char *str1,char *str2)
             {
                 j=mode[j];
             }
-            else
-            {
-                j++;
-            }
+            j++;
             i++;
         }
         printf("The j is %d\n",j);
