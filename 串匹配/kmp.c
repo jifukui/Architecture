@@ -85,7 +85,6 @@ void Getmode(char *str,unsigned int *mode)
             i++;
             j++;
             mode[i]=j;    
-            index++; 
         }
         else
         {
@@ -110,7 +109,6 @@ void GetSupermode(char *str,unsigned int *mode)
             i++;
             j++;
             mode[i]=mode[i]==mode[j]?mode[j]:j;
-            index++;
         }
         else
         {
