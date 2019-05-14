@@ -49,7 +49,7 @@ int  IStackLength(isStack *stack)
     }
     return STACK_ERR;
 }
-bool IStackEmpty(isStack *istack)
+bool IStackEmpty(isStack *stack)
 {
     if(stack&&(!stack->len))
     {
