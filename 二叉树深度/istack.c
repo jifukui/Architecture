@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include "istack.h"
 static const  int IStackMask=MAX;
-sStack * IStackInit()
+isStack * IStackInit()
 {
-    sStack *stack=NULL;
+    isStack *stack=NULL;
     stack=(ipsStack)malloc(sizeof(isStack));
     if(stack)
     {

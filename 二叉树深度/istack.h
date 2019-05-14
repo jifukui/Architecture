@@ -16,7 +16,7 @@ typedef struct istacknode
     int data;
     struct isStackNode *pre;
 }isStackNode,ipsStackNode;
-sStack * IStackInit();
+isStack * IStackInit();
 void IStackDestory(isStack *stack);
 void IStackClear(isStack *stack);
 int  IStackLength(isStack *stack);
