@@ -18,7 +18,7 @@ int GetPostion(char *str1,char *str2)
         }
         i=0;
         j=0;
-        while (i<strlen(str1)||j<strlen(str2))
+        while (i<strlen(str1)&&j<strlen(str2))
         {
             if(str1[i]!=str2[j])
             {
@@ -51,7 +51,7 @@ int GetSuperPostion(char *str1,char *str2)
         }
         i=0;
         j=0;
-        while (i<strlen(str1)||j<strlen(str2))
+        while (i<strlen(str1)&&j<strlen(str2))
         {
             if(str1[i]!=str2[j])
             {
