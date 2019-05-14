@@ -49,7 +49,7 @@ int  IStackLength(isStack *stack)
     }
     return STACK_ERR;
 }
-bool IStackEmpty(sStack *istack)
+bool IStackEmpty(isStack *istack)
 {
     if(stack&&(!stack->len))
     {
@@ -60,7 +60,7 @@ bool IStackEmpty(sStack *istack)
 }
 bool IStackFull(isStack *stack)
 {
-    if(stack&&(stack->len==StackMask))
+    if(stack&&(stack->len==IStackMask))
     {
         return TRUE;
     }
@@ -68,7 +68,7 @@ bool IStackFull(isStack *stack)
 }
 bool IPush(isStack *stack,int value)
 {
-    if(stack&&stack->len<StackMask)
+    if(stack&&stack->len<IStackMask)
     {
         isStackNode *node=NULL;
         node =(isStackNode*)malloc(sizeof(isStackNode));
