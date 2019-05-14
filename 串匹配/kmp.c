@@ -38,7 +38,7 @@ int GetPostion(char *str1,char *str2)
 }
 int GetSuperPostion(char *str1,char *str2)
 {
-    /*unsigned int mode[256];
+    unsigned int mode[256];
     int i=0;
     int j=0;
     if(str1&&str2)
@@ -66,7 +66,7 @@ int GetSuperPostion(char *str1,char *str2)
         {
             return i-j;
         }    
-    }*/
+    }
     printf("This is Supper Position\n");
     return -1;
 }
@@ -96,6 +96,7 @@ void Getmode(char *str,unsigned int *mode)
 }
 void GetSupermode(char *str,unsigned int *mode)
 {
+    printf("This is Supper Position Get Mode \n");
     int i=0;
     int j=-1;
     mode[i]=0;
