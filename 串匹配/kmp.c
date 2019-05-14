@@ -99,7 +99,7 @@ void GetSupermode(char *str,unsigned int *mode)
     printf("This is Supper Position Get Mode \n");
     int i=0;
     int j=-1;
-    mode[i]=0;
+    mode[i]=-1;
     int index=0;
     while (i<strlen(str))
     {
