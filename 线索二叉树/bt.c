@@ -281,6 +281,7 @@ scluetree * StoreClueTreeMid(sBinaryTree *bt)
         while (!StackEmpty(stack))
         {
             node=Pop(stack);
+            printf("The data  is %c\n",node->data);
             while (node&&node->data!='@')
             {
                 Push(stack,node);
