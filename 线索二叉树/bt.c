@@ -291,14 +291,13 @@ scluetree * StoreClueTreeMid(sBinaryTree *bt)
                 node=Pop(stack);
                 printf("The data  is %c\n",node->data);
                 cnode=(scluetreenode *)malloc(sizeof(scluetreenode));
-                printf("The cnode address is %u\n",cnode);
                 cnode->data=node->data;
-                if(((sBinaryTreeNode *)(node->lchild))->data=='@')
+                if(node->lchild&&((sBinaryTreeNode *)(node->lchild))->data=='@')
                 {
                     cnode->ltag=1;
                     cnode->lchild=pcnode;
                 }
-                if(((sBinaryTreeNode *)(node->rchild))->data=='@')
+                if(node->rchild&&((sBinaryTreeNode *)(node->rchild))->data=='@')
                 {
                     cnode->rtag=1;
                 }
