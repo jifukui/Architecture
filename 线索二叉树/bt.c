@@ -270,13 +270,12 @@ scluetree * StoreClueTreeMid(sBinaryTree *bt)
     scluetreenode *cnode=NULL;
     scluetreenode *pcnode=NULL;
     int index=0;
-    if(root)
+    if(root&&bt)
     {
-        root->length=1;
-        root->top=bt->root;
         sBinaryTreeNode *node=NULL;
         sStack *stack=NULL;
         node=bt->root;
+        printf("The data  is %c\n",node->data);
         Push(stack,node);
         while (!StackEmpty(stack))
         {
