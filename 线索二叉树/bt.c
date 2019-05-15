@@ -314,6 +314,7 @@ scluetree * StoreClueTreeMid(sBinaryTree *bt)
                 }
                 pcnode=cnode;
                 Push(stack,node->rchild);
+                index++;
             }
         }
         return root;
