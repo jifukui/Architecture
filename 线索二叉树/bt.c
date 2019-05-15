@@ -336,6 +336,7 @@ void DisplayStoreTree(scluetree *root)
         while (cnode)
         {
             printf("The %d is %c\n",i,cnode->data);
+            cnode->rchild;
             i++;
         }
     }
