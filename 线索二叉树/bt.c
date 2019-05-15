@@ -274,8 +274,9 @@ scluetree * StoreClueTreeMid(sBinaryTree *bt)
     {
         root->length=1;
         root->top=bt->root;
-        sBinaryTreeNode *node;
+        sBinaryTreeNode *node=NULL;
         sStack *stack=NULL;
+        node=bt->root;
         Push(stack,node);
         while (!StackEmpty(stack))
         {
