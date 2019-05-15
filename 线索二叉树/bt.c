@@ -300,7 +300,7 @@ scluetree * StoreClueTreeMid(sBinaryTree *bt)
                     cnode->ltag=1;
                     cnode->lchild=pcnode;
                 }
-                if(node->rchild||((sBinaryTreeNode *)(node->rchild))->data=='@')
+                if(!node->rchild||((sBinaryTreeNode *)(node->rchild))->data=='@')
                 {
                     cnode->rtag=1;
                 }
