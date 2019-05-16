@@ -84,7 +84,7 @@ bool Push(sStack *stack,cluetreenodec * value)
     }
     return FALSE;
 }
-cluetreenodec *  Pop(sStack *stack)
+cluetreenode *  Pop(sStack *stack)
 {
     if(stack&&stack->top>0)
     {
