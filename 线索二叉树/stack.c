@@ -99,7 +99,7 @@ cluetreenodec *  Pop(sStack *stack)
     }
     return STACK_ERR;
 }
-const cluetreenodec * const GetTop(sStack *stack)
+const cluetreenode * const GetTop(sStack *stack)
 {
     if(stack&&stack->top>0)
     {
