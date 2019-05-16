@@ -13,7 +13,7 @@ typedef struct stack
 }sStack,*psStack;
 typedef struct stacknode
 {
-    sBinaryTreeNode* data;
+    cluetreenode* data;
     struct sStackNode *pre;
 }sStackNode,psStackNode;
 sStack * StackInit();
@@ -22,8 +22,8 @@ void StackClear(sStack *stack);
 int  StackLength(sStack *stack);
 bool StackEmpty(sStack *stack);
 bool StackFull(sStack *stack);
-bool Push(sStack *stack,sBinaryTreeNode* value);
-sBinaryTreeNode*  Pop(sStack *stack);
-const sBinaryTreeNode*const  GetTop(sStack *stack);
+bool Push(sStack *stack,cluetreenode* value);
+cluetreenode*  Pop(sStack *stack);
+const cluetreenode*const  GetTop(sStack *stack);
 void StackDisplay(sStack *stack);
 #endif

@@ -13,7 +13,7 @@ typedef struct queue
 }squeue,*psqueue;
 typedef struct queuenode
 {
-    sBinaryTreeNode *data;
+    cluetreenode *data;
     struct sQueueNode *next;  
 }sQueueNode,*spQueueNode;
 squeue *QueueInit();
@@ -22,8 +22,8 @@ void QueueClear(squeue *queue);
 int QueueLength(squeue *queue);
 int QueueEmpty(squeue *queue);
 int QueueFull(squeue *queue);
-int EnQueue(squeue *queue,sBinaryTreeNode *value);
-sBinaryTreeNode *DeQueue(squeue *queue);
-const sBinaryTreeNode *const GetHeadQueue(squeue *queue);
+int EnQueue(squeue *queue,cluetreenode *value);
+cluetreenode *DeQueue(squeue *queue);
+const cluetreenode *const GetHeadQueue(squeue *queue);
 void QueueDisplay(squeue*queue);
 #endif

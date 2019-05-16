@@ -1,11 +1,12 @@
 #ifndef _TREE_NODE_H
 #define _TREE_NODE_H
 #define MAX 32
-typedef struct BinaryTreeNode
+typedef struct ClueTreeNode
 {
     int data;
-    int flag;
-    struct sBinaryTreeNode *lchild;
-    struct sBinaryTreeNode *rchild;
-}sBinaryTreeNode,*spBinaryTreeNode;
+    int ltag;
+    int rtag;
+    struct cluetreenode *lchild;
+    struct cluetreenode *rchild; 
+}cluetreenode,*pcluetreenode;
 #endif

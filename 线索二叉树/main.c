@@ -1,11 +1,10 @@
 #include <stdio.h>
-#include "bt.h"
+#include "ClueTree.h"
 int main()
 {
-    int data;
-    sBinaryTree *bt;
-    bt=StoreTreeInit();
-    if(bt)
+    cluetreelist *bl=NULL;
+    cluetreelist=ClueTreeInit();
+    if(cluetreelist)
     {
         printf("初始华顺序二叉树成功\n");
         printf("输入数据\n");
@@ -13,7 +12,7 @@ int main()
         while (data!='#')
         {
             printf("输入数据是:%c\n",data);
-            if(!StoreTree(bt,data))
+            if(!ClueTreeStror(bt,data))
             {
                 break;
             }
@@ -21,26 +20,9 @@ int main()
             getchar();
             data=getchar();
         }
-        printf("前序遍历树为：\n");
-        TreeFrontErgodic(bt);
-        printf("中续遍历树为:\n");
-        TreeMidErgodic(bt);
-        printf("后续遍历为:\n");
-        TreeEedErgodic(bt);
-        data=TreeDeep(bt);
-        printf("二叉树的深度为%d\n",data);
-        printf("线索二叉树中序\n");
-        scluetree *root=NULL;
-        root=StoreClueTreeMid(bt);
-        if(root)
-        {
-            MidDisplayStoreTree(root);
-        }
-        StoreTreeDestory(bt);
-    }
-    else
-    {
-        printf("初始华顺序二叉树失败\n");
+        printf("前序线索二叉树\n");
+        Front(bl);
+        FrontDisPlay(bl);
     }
     return 0;
 }

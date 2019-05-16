@@ -66,7 +66,7 @@ bool StackFull(sStack *stack)
     }
     return FALSE;
 }
-bool Push(sStack *stack,sBinaryTreeNode * value)
+bool Push(sStack *stack,cluetreenodec * value)
 {
     if(stack&&stack->len<StackMask)
     {
@@ -84,7 +84,7 @@ bool Push(sStack *stack,sBinaryTreeNode * value)
     }
     return FALSE;
 }
-sBinaryTreeNode *  Pop(sStack *stack)
+cluetreenodec *  Pop(sStack *stack)
 {
     if(stack&&stack->top>0)
     {
@@ -99,7 +99,7 @@ sBinaryTreeNode *  Pop(sStack *stack)
     }
     return STACK_ERR;
 }
-const sBinaryTreeNode * const GetTop(sStack *stack)
+const cluetreenodec * const GetTop(sStack *stack)
 {
     if(stack&&stack->top>0)
     {
