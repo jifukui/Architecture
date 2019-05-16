@@ -12,7 +12,7 @@ cluetreelist* ClueTreeInit()
     {
         nodelist->length=0;
         nodelist->queue=NULL;
-        nodelist-queue=QueueInit();
+        nodelist->queue=QueueInit();
     }
     return nodelist;
 }
@@ -39,7 +39,7 @@ int ClueTreeStror(cluetreelist *bl,int value)
                 else
                 {
                     current=GetHeadQueue(bl->queue);
-                    if(node->data!='@'&&pnode->data!='@')
+                    if(node->data!='@'&&current->data!='@')
                     {
                         if(bl->length%2)
                         {
@@ -58,7 +58,7 @@ int ClueTreeStror(cluetreelist *bl,int value)
 				    DeQueue(bl->queue);
 			    }
 			    bl->length++;
-			    return BT_OK;    
+			    return CLUETREE_OK;    
             }
         }
 
@@ -81,7 +81,7 @@ int Front(cluetreelist *bl)
         {
             if(node)
             {
-                Push(statck,node);
+                Push(stack,node);
                 while (!StackEmpty(stack))
                 {
                     node=Pop(stack);

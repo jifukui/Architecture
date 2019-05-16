@@ -3,9 +3,9 @@
 int main()
 {
     cluetreelist *bl=NULL;
-    cluetreelist=ClueTreeInit();
+    bl=ClueTreeInit();
     int data;
-    if(cluetreelist)
+    if(bl)
     {
         printf("初始华顺序二叉树成功\n");
         printf("输入数据\n");
