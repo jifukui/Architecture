@@ -3,6 +3,7 @@
 #include "ClueTree.h"
 #include "stack.h"
 #include "istack.h"
+#include "queue.h"
 cluetreelist* ClueTreeInit()
 {
     cluetreelist* nodelist=NULL;

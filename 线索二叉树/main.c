@@ -4,6 +4,7 @@ int main()
 {
     cluetreelist *bl=NULL;
     cluetreelist=ClueTreeInit();
+    int data;
     if(cluetreelist)
     {
         printf("初始华顺序二叉树成功\n");
@@ -12,7 +13,7 @@ int main()
         while (data!='#')
         {
             printf("输入数据是:%c\n",data);
-            if(!ClueTreeStror(bt,data))
+            if(!ClueTreeStror(bl,data))
             {
                 break;
             }
