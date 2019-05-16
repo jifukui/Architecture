@@ -320,6 +320,7 @@ scluetree * StoreClueTreeMid(sBinaryTree *bt)
                     root->top=node;
                 }
                 pcnode=cnode;
+                printf("The  pcnode data is %c\n",pcnode->data);
                 Push(stack,node->rchild);
                 index++;
             }
@@ -334,18 +335,55 @@ scluetree * StoreClueTreeMid(sBinaryTree *bt)
     
 }
 
-void DisplayStoreTree(scluetree *root)
+scluetreenode *MidGetFrontNode(scluetreenode* node)
+{
+    scluetreenode *pre=NULL;
+    if(!node)
+    {
+        return NULL;
+    }
+    pre=node->lchild;
+    if(node->ltag==0)
+    {
+        while (!pre->rtag)
+        {
+            pre=pre->rchild;
+        }
+    }
+    return pre;
+}
+
+scluetreenode *MidGetAfterNode(scluetreenode* node)
+{
+    scluetreenode *pre=NULL;
+    if(!node)
+    {
+        return NULL;
+    }
+    pre=node->rchild;
+    if(node->rtag==0)
+    {
+        while (!pre->ltag)
+        {
+            pre=pre->lchild;
+        }
+    }
+    return pre;
+}
+void MidDisplayStoreTree(scluetree *root)
 {
     scluetreenode *cnode=NULL;
     cnode=root->top;
-    if(cnode)
+    int index=0;
+    while (cnode->ltag==0)
     {
-        int i=0;
-        while (cnode)
-        {
-            printf("The %d is %c\n",i,cnode->data);
-            cnode=cnode->rchild;
-            i++;
-        }
+        cnode=cnode->lchild;
     }
+    while (cnode)
+    {
+        printf("The %d is %d\n",index,cnode->data);
+        cnode=MidGetAfterNode(cnode);
+    }
+    
+    
 }

@@ -40,6 +40,7 @@ int TreeDeep(sBinaryTree *bt);
 /**线索二叉树中序存储*/
 scluetree *ClueTreeInit();
 scluetree * StoreClueTreeMid(sBinaryTree *bt);
-/**显示二叉树对象*/
-void DisplayStoreTree(scluetree *root);
+scluetreenode *MidGetFrontNode(scluetreenode* node);
+scluetreenode *MidGetAfterNode(scluetreenode *node);
+void MidDisplayStoreTree(scluetree *root);
 #endif
