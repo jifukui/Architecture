@@ -66,7 +66,7 @@ bool StackFull(sStack *stack)
     }
     return FALSE;
 }
-bool Push(sStack *stack,cluetreenodec * value)
+bool Push(sStack *stack,cluetreenode * value)
 {
     if(stack&&stack->len<StackMask)
     {

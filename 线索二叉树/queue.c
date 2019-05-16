@@ -70,7 +70,7 @@ int QueueFull(squeue *queue)
     }
     return FALSE;
 }
-int EnQueue(squeue *queue,sBinaryTreeNode *value)
+int EnQueue(squeue *queue,cluetreenode *value)
 {
     if(queue&&!QueueFull(queue))
     {
@@ -96,7 +96,7 @@ int EnQueue(squeue *queue,sBinaryTreeNode *value)
     }
     return FALSE;
 }
-sBinaryTreeNode *DeQueue(squeue *queue)
+cluetreenode *DeQueue(squeue *queue)
 {
     if(queue)
     {
@@ -114,11 +114,11 @@ sBinaryTreeNode *DeQueue(squeue *queue)
     }
     return FALSE;
 }
-const sBinaryTreeNode *const  GetHeadQueue(squeue *queue)
+const cluetreenode *const  GetHeadQueue(squeue *queue)
 {
     if(queue&&(!QueueEmpty(queue)))
     {
-        sBinaryTreeNode* data=((sQueueNode *)(queue->head))->data;
+        cluetreenode* data=((sQueueNode *)(queue->head))->data;
         return data;
     }
     return FALSE;
@@ -134,7 +134,7 @@ void QueueDisplay(squeue*queue)
         node=queue->head;
         while((index--)&&node)
         {
-            int data=((sBinaryTreeNode *)(node->data))->data;
+            int data=((cluetreenode *)(node->data))->data;
             printf("The %d is %d\n",i,data);
             i++;
             node=node->next;
