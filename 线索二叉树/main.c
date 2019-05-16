@@ -34,7 +34,7 @@ int main()
         root=StoreClueTreeMid(bt);
         if(root)
         {
-            DisplayStoreTree(root);
+            MidDisplayStoreTree(root);
         }
         StoreTreeDestory(bt);
     }
