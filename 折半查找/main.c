@@ -12,7 +12,7 @@ int main(int argc,char **argv)
         int mid;
         while (low<=height)
         {
-            mid=(low+(low+height))/2;
+            mid=(low+height)/2;
             if(data[mid]>val)
             {
                 height=mid-1;
