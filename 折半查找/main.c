@@ -24,6 +24,7 @@ int main(int argc,char **argv)
             else
             {
                 printf("找到查找的参数在%d\n",mid);
+                break;
             }
         }
         printf("没有找到需要查找的参数\n"); 
