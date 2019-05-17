@@ -13,7 +13,7 @@ int main()
         while (data!='#')
         {
             printf("输入数据是:%c\n",data);
-            if(!ClueTreeStror(bl,data))
+            if(ClueTreeStror(bl,data))
             {
                 break;
             }
