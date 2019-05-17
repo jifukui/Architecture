@@ -85,19 +85,19 @@ int Front(cluetreelist *bl)
                 while (!StackEmpty(stack))
                 {
                     node=Pop(stack);
-                    while (node&&!node->ltag)
+                    while (node&&node->data!='@')
                     {
                         if(node->rtag==0)
                         {
                             Push(stack,node->rchild);
                         }
+						if (pre&&pre->rtag == 1)
+						{
+							pre->rchild = node;
+						}
                         pre=node;
                         node=node->lchild;
                     }
-                    pre=node;
-                    node=Pop(stack);
-                    pre->rchild=node;
-                    Push(stack,node);
                 }
             }
             return CLUETREE_OK;
@@ -117,7 +117,7 @@ void FrontDisPlay(cluetreelist *bl)
     int index=0;
     while (node)
     {
-        printf("The %d is %d \n",index,node->data);
+        printf("The %d is %c \n",index,node->data);
         if(node->ltag)
         {
             node=node->rchild;
@@ -126,6 +126,6 @@ void FrontDisPlay(cluetreelist *bl)
         {
             node=node->lchild;
         }
+		index++;
     }
-    
 }
