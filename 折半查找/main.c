@@ -8,9 +8,9 @@ int main(int argc,char **argv)
         val=atoi(argv[1]);
         printf("输入的要查找的数为%d\n",val);
         int low=0;
-        int hight=(sizeof(data))/(sizeof(int))
+        int height=(sizeof(data))/(sizeof(int));
         int mid;
-        while (low<height)
+        while (low<=height)
         {
             mid=(low+(low+height))/2;
             if(data[mid]>val)
