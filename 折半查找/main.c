@@ -27,7 +27,7 @@ int main(int argc,char **argv)
                 break;
             }
         }
-        if(low<=height)
+        if(low>height)
         {
             printf("没有找到需要查找的参数\n");
         } 
