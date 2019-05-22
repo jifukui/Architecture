@@ -23,9 +23,9 @@ int main()
         }
         len=len/2;
     }
-    for(n=0;n<num;n++)
+    for(n=i;i<num;i++)
     {
-        printf("The %d Is %d \n",n,data[n]);
+        printf("The %d Is %d \n",i,data[i]);
     }
     return 0;
 }
