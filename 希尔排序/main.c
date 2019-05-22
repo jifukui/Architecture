@@ -2,7 +2,7 @@
 int main()
 {
     int data[]={12,5,8,65,78,32,15,1,45,66,27,56,77,99};
-    int i,n,j;
+    int i,j;
     int temp;
     int len;
     int num;
@@ -10,7 +10,7 @@ int main()
     len=num/2;
     while(len>=1)
     {
-        for(i=len;i<14;i++)
+        for(i=len;i<num;i++)
         {
             temp=data[i];
             j=i-len;
@@ -23,7 +23,7 @@ int main()
         }
         len=len/2;
     }
-    for(n=0;n<14;n++)
+    for(n=0;n<num;n++)
     {
         printf("The %d Is %d \n",n,data[n]);
     }
