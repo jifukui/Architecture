@@ -2,11 +2,10 @@
 int main()
 {
     int data[]={12,5,8,65,78,32,15,1,45,66,27,56,77,99};
-    int i,n;
+    int i,n,j;
     int temp;
     int len;
     int num;
-    int temp;
     len=14;
     len=len/2;
     while(len>=1)
