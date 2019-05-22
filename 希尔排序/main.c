@@ -10,7 +10,7 @@ int main()
     len=num/2;
     while(len>=1)
     {
-        for(i=len+1;i<14;i++)
+        for(i=len;i<14;i++)
         {
             temp=data[i];
             j=i-len;
