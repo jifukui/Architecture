@@ -13,13 +13,13 @@ int main()
         for(i=len+1;i<14;i++)
         {
             temp=data[i];
-            j=i-d;
+            j=i-len;
             while (j>0&&temp<data[j])
             {
                 data[j+len]=data[j];
                 j=j-len;
             }
-            data[j+d]=temp;
+            data[j+len]=temp;
         }
         len=len/2;
     }
