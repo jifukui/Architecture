@@ -14,7 +14,7 @@ int main()
         {
             temp=data[i];
             j=i-len;
-            while (j>0&&temp<data[j])
+            while (j>=0&&temp<data[j])
             {
                 data[j+len]=data[j];
                 j=j-len;
