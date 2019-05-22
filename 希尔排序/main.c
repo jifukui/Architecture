@@ -23,7 +23,7 @@ int main()
         }
         len=len/2;
     }
-    for(n=i;i<num;i++)
+    for(i=0;i<num;i++)
     {
         printf("The %d Is %d \n",i,data[i]);
     }
