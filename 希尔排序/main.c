@@ -6,8 +6,8 @@ int main()
     int temp;
     int len;
     int num;
-    len=14;
-    len=len/2;
+    num=(sizeof data)/sizeof(int);
+    len=num/2;
     while(len>=1)
     {
         for(i=len+1;i<14;i++)
