@@ -1,22 +1,28 @@
 #include <stdio.h>
-#include <sys/time.h>
 int main()
 {
     int data[]={12,5,8,65,78,32,15,1,45,66,27,56,77,99};
     int i,n;
     int temp;
     int len;
-    len=14/2;
+    int num;
+    int temp;
+    len=14;
+    len=len/2;
     while(len>=1)
     {
-        for(i=len+1;i<14;i=i++)
+        for(i=len+1;i<14;i++)
         {
-            if(data[i]>data[i+len])
+            temp=data[i];
+            j=i-d;
+            while (j>0&&temp<data[j])
             {
-
+                data[j+len]=data[j];
+                j=j-len;
             }
+            data[j+d]=temp;
         }
-        len=(len+1)/2;
+        len=len/2;
     }
     for(n=0;n<14;n++)
     {
