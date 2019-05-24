@@ -13,7 +13,7 @@ typedef struct stack
 }sStack,*psStack;
 typedef struct stacknode
 {
-    int data;
+    void *data;
     struct sStackNode *pre;
 }sStackNode,psStackNode;
 sStack * StackInit();
@@ -22,8 +22,8 @@ void StackClear(sStack *stack);
 int  StackLength(sStack *stack);
 bool StackEmpty(sStack *stack);
 bool StackFull(sStack *stack);
-bool Push(sStack *stack,int value);
-int  Pop(sStack *stack);
-int GetTop(sStack *stack);
+bool Push(sStack *stack,void * value);
+void *  Pop(sStack *stack);
+void * GetTop(sStack *stack);
 void StackDisplay(sStack *stack);
 #endif

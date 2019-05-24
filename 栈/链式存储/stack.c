@@ -66,7 +66,7 @@ bool StackFull(sStack *stack)
     }
     return FALSE;
 }
-bool Push(sStack *stack,int value)
+bool Push(sStack *stack,void * value)
 {
     if(stack&&stack->len<StackMask)
     {
@@ -84,11 +84,11 @@ bool Push(sStack *stack,int value)
     }
     return FALSE;
 }
-int  Pop(sStack *stack)
+void *  Pop(sStack *stack)
 {
     if(stack&&stack->top>0)
     {
-        int data;
+        void * data;
         sStackNode *current;
         current=stack->top;
         stack->len--;
@@ -99,11 +99,11 @@ int  Pop(sStack *stack)
     }
     return STACK_ERR;
 }
-int GetTop(sStack *stack)
+void * GetTop(sStack *stack)
 {
     if(stack&&stack->top>0)
     {
-        return ((sStackNode *)(stack->top))->data;
+        return (void *)((sStackNode *)(stack->top))->data;
     }
     return STACK_ERR;
 }
