@@ -44,6 +44,10 @@ int qkpass(int *data,int low,int height)
         }
     }
     printf("The i is %d The j is %d\n",i,j);
+    for(j=0;j<14;j++)
+    {
+        printf("The %d Is %d \n",j,data[j]);
+    }
     data[i]=temp;
     return i;
     
