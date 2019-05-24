@@ -62,7 +62,7 @@ void qksort(int *data,int len)
         Push(stack,&qk);
         while (!StackEmpty(stack))
         {
-            qk=(Qk*)Pop(stack);
+            qk=(Qk)Pop(stack);
             low=qk.low;
             height=qk.height;
             while (low<height)
