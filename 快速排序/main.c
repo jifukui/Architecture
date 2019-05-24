@@ -109,5 +109,10 @@ void qksort(int *data,int len)
         free(qk1);
         qk1=NULL;
     }
+    if(qk2)
+    {
+        free(qk2);
+        qk2=NULL;
+    }
     StackDestory(stack);
 }
