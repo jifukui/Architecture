@@ -14,10 +14,7 @@ int main()
     int i,n;
     int temp;
     int  num=(sizeof data)/sizeof(int);
-    printf("The data length is %d\n",num);
     qksort(data,num);
-    num=(sizeof data)/sizeof(int);
-    printf("The data length is %d\n",num);
     for(n=0;n<num;n++)
     {
         printf("The %d Is %d \n",n,data[n]);
@@ -63,6 +60,7 @@ void qksort(int *data,int len)
         printf("初始化栈成功\n");
         qk1->low=0;
         qk1->height=len;
+        printf("The data length is %d\n",qk1->height);
         Push(stack,qk1);
         while (!StackEmpty(stack))
         {
