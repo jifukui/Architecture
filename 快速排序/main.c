@@ -104,5 +104,9 @@ void qksort(int *data,int len)
     {
         printf("初始化栈失败\n");
     }
-    
+    if(kq1)
+    {
+        free(qk1);
+        qk1=NULL;
+    }
 }
