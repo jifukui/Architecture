@@ -74,7 +74,7 @@ void qksort(int *data,int len)
             while (low<height)
             {
                 i=qkpass(data,low,height);
-                if(i<height)
+                if(i+1<height)
                 {
                     Qk *qk2=NULL;
                     qk2=(Qk *)malloc(sizeof(Qk));
