@@ -51,28 +51,28 @@ int qkpass(int *data,int low,int height)
 void qksort(int *data,int len)
 {
     int i,low,height;
-    Qk qk;
+    Qk *qk;
     sStack * stack;
     stack=StackInit();
     if(stack)
     {
         printf("初始化栈成功\n");
-        qk.low=0;
-        qk.height=len;
-        Push(stack,&qk);
+        qk->low=0;
+        qk->height=len;
+        Push(stack,qk);
         while (!StackEmpty(stack))
         {
-            qk=(Qk) *Pop(stack);
-            low=qk.low;
-            height=qk.height;
+            qk=Pop(stack);
+            low=qk->low;
+            height=qk->height;
             while (low<height)
             {
                 i=qkpass(data,low,height);
                 if(i<height)
                 {
-                    qk.low=i+1;
-                    qk.height=height;
-                    Push(stack,&qk);
+                    qk->low=i+1;
+                    qk->height=height;
+                    Push(stack,qk);
                 }
                 height=i-1;
             }
