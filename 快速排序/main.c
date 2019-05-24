@@ -46,12 +46,13 @@ int qkpass(int *data,int low,int height)
             data[j]=data[i];
         }
     }
+    data[i]=temp;
     printf("The i is %d The j is %d\n",i,j);
     for(j=0;j<8;j++)
     {
         printf("The %d Is %d \n",j,data[j]);
     }
-    data[i]=temp;
+    
     return i;
     
 }
@@ -66,7 +67,7 @@ void qksort(int *data,int len)
     {
         printf("初始化栈成功\n");
         qk1->low=0;
-        qk1->height=len;
+        qk1->height=len-1;
         printf("The data length is %d\n",qk1->height);
         Push(stack,qk1);
         while (!StackEmpty(stack))
