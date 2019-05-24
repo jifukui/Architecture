@@ -44,7 +44,7 @@ int qkpass(int *data,int low,int height)
         }
     }
     printf("The i is %d The j is %d\n",i,j);
-    printf("The i is %d The j is %d\n",low,height);
+    printf("The low is %d The height is %d\n",low,height);
     for(j=0;j<14;j++)
     {
         printf("The %d Is %d \n",j,data[j]);
