@@ -14,6 +14,7 @@ int main()
     int i,n;
     int temp;
     int num=(sizeof data)/sizeof(int);
+    printf("The data length is %d\n",num);
     qksort(data,num);
     for(n=0;n<num;n++)
     {
