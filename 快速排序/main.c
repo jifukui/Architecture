@@ -25,6 +25,8 @@ int qkpass(int *data,int low,int height)
 {
     int i=low,j=height;
     int temp=data[low];
+    printf("The low is %d The height is %d\n",low,height);
+    printf("The temp is %d\n",temp);
     while (i<j)
     {
         while (i<j&&temp<=data[j])
@@ -45,7 +47,6 @@ int qkpass(int *data,int low,int height)
         }
     }
     printf("The i is %d The j is %d\n",i,j);
-    printf("The low is %d The height is %d\n",low,height);
     for(j=0;j<8;j++)
     {
         printf("The %d Is %d \n",j,data[j]);
