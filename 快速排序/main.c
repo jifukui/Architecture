@@ -51,7 +51,8 @@ int qkpass(int *data,int low,int height)
 void qksort(int *data,int len)
 {
     int i,low,height;
-    Qk *qk;
+    Qk *qk=NULL;
+    qk=(Qk *)malloc(sizeof(QK));
     sStack * stack;
     stack=StackInit();
     if(stack)
