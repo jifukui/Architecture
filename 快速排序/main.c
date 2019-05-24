@@ -51,16 +51,16 @@ int qkpass(int *data,int low,int height)
 void qksort(int *data,int len)
 {
     int i,low,height;
-    Qk *qk=NULL;
-    qk=(Qk *)malloc(sizeof(Qk));
+    Qk *qk=NULL,*qk1;
+    qk1=(Qk *)malloc(sizeof(Qk));
     sStack * stack;
     stack=StackInit();
     if(stack)
     {
         printf("初始化栈成功\n");
-        qk->low=0;
-        qk->height=len;
-        Push(stack,qk);
+        qk1->low=0;
+        qk1->height=len;
+        Push(stack,qk1);
         while (!StackEmpty(stack))
         {
             qk=Pop(stack);
@@ -71,9 +71,21 @@ void qksort(int *data,int len)
                 i=qkpass(data,low,height);
                 if(i<height)
                 {
-                    qk->low=i+1;
-                    qk->height=height;
-                    Push(stack,qk);
+                    Qk *qk2=NULL;
+                    qk2=(Qk *)malloc(sizeof(Qk));
+                    if(qk2)
+                    {
+                        printf("分配空间成功\n");
+                        qk2->low=i+1;
+                        qk2->height=height;
+                        Push(stack,qk2);
+                    }
+                    else
+                    {
+                        printf("分配空间失败\n");
+                    }
+                    
+                    
                 }
                 height=i-1;
             }
