@@ -30,7 +30,7 @@ int qkpass(int *data,int low,int height)
         {
             j--;
         }
-        if(i<j&&i>-1)
+        if(i<j)
         {
             data[i]=data[j];
         }
@@ -38,11 +38,12 @@ int qkpass(int *data,int low,int height)
         {
             i++;
         }
-        if(i<j&&i>-1)
+        if(i<j)
         {
             data[j]=data[i];
         }
     }
+    printf("The i is %d The j is %d\n",i,j);
     data[i]=temp;
     return i;
     
