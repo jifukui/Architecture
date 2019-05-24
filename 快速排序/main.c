@@ -52,7 +52,7 @@ void qksort(int *data,int len)
 {
     int i,low,height;
     Qk *qk=NULL;
-    qk=(Qk *)malloc(sizeof(QK));
+    qk=(Qk *)malloc(sizeof(Qk));
     sStack * stack;
     stack=StackInit();
     if(stack)
