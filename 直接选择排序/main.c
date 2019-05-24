@@ -22,9 +22,9 @@ int main()
             data[i]=temp;
         }
     }
-    for(n=0;n<num;n++)
+    for(i=0;i<num;n++)
     {
-        printf("The %d Is %d \n",n,data[n]);
+        printf("The %d Is %d \n",i,data[i]);
     }
     return 0;
 }
