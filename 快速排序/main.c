@@ -5,7 +5,6 @@ typedef struct
     int low;
     int height;
 }Qk;
-
 int qkpass(int *data,int low,int height);
 void qksort(int *data,int len);
 int main()
@@ -31,7 +30,7 @@ int qkpass(int *data,int low,int height)
         {
             j--;
         }
-        if(i<j)
+        if(i<j&&i>-1)
         {
             data[i]=data[j];
         }
@@ -39,7 +38,7 @@ int qkpass(int *data,int low,int height)
         {
             i++;
         }
-        if(i<j)
+        if(i<j&&i>-1)
         {
             data[j]=data[i];
         }
@@ -84,9 +83,7 @@ void qksort(int *data,int len)
                     else
                     {
                         printf("分配空间失败\n");
-                    }
-                    
-                    
+                    } 
                 }
                 height=i-1;
             }
