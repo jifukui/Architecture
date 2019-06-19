@@ -172,11 +172,12 @@ void FrontInsert(cluetreenode *Bp,int value)
                 Bp->ltag=0;  
                 Bp->lchild=node;
 
-                node->rtag=Bp->rtag;
-                node->rchild=Bp->rchild;
 
                 node->ltag=1;
                 node->lchild=Bp;
+
+                node->rtag=1;
+                node->rchild=Bp->rchild;
                 
                 ((cluetreenode *)Bp->rchild)->lchild=node;
             }
@@ -185,7 +186,7 @@ void FrontInsert(cluetreenode *Bp,int value)
                 node->ltag=0;
                 Bp->lchild=node;
 
-                
+
             }
         }
         else
