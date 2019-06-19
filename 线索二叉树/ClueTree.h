@@ -15,6 +15,7 @@ int Mid(cluetreelist *bl);
 int Front(cluetreelist *bl);
 int End(cluetreelist *bl);
 void FrontDisPlay(cluetreelist *bl);
+void MidDisPlay(cluetreelist *bl);
 cluetreenode *FrontGetNode(cluetreelist *bl,int value);
 void FrontInsert(cluetreenode *Bp,int value);
 void FrontDel(cluetreelist *bl,int value);

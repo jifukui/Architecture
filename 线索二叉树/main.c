@@ -22,12 +22,15 @@ int main()
             getchar();
             data=getchar();
         }
-        printf("前序线索二叉树\n");
+        /* printf("前序线索二叉树\n");
         Front(bl);
         FrontDisPlay(bl);
         node=FrontGetNode(bl,'A');
         FrontInsert(node,'J');
-        FrontDisPlay(bl);
+        FrontDisPlay(bl);*/
+        printf("中序线索二叉树\r\n");
+        Mid(bl);
+        MidDisPlay(bl);
     }
     return 0;
 }
