@@ -25,9 +25,9 @@ int main()
         printf("前序线索二叉树\n");
         Front(bl);
         FrontDisPlay(bl);
-        node=FrontGetNode(bl,'C');
-        FrontInsert(node,'J');
-        FrontDisPlay(bl);
+        //node=FrontGetNode(bl,'C');
+        //FrontInsert(node,'J');
+        //FrontDisPlay(bl);
     }
     return 0;
 }

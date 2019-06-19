@@ -179,7 +179,6 @@ void FrontInsert(cluetreenode *Bp,int value)
                 node->rtag=1;
                 node->rchild=Bp->rchild;
                 
-                ((cluetreenode *)Bp->rchild)->lchild=node;
             }
             else
             {
