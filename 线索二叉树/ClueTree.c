@@ -180,11 +180,16 @@ void FrontInsert(cluetreenode *Bp,int value)
                 node->rchild=Bp->rchild;
                 
             }
+            /**挂载点的左子树存在 */
             else
-            {
+            {                 
                 node->ltag=0;
-                Bp->lchild=node;
+                node->lchild=Bp->lchild;
 
+                node->rtag=1;
+                node->rchild=Bp->lchild;
+
+                Bp->lchild=node;
 
             }
         }
