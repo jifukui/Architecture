@@ -68,7 +68,41 @@ int ClueTreeStror(cluetreelist *bl,int value)
 }
 int Mid(cluetreelist *bl)
 {
-
+    if(bl)
+    {
+        cluetreenode *node=bl->top;
+        cluetreenode *pre=NULL;
+        sStack *stack=NULL;
+        stack=StackInit();
+        if(stack)
+        {
+            if(node)
+            {
+                Push(stack,node);
+                while (!StackEmpty())
+                {
+                    node=Pop(stack);
+                    while (node&&node->data!='@')
+                    {
+                        Push(stack,node);
+                        node=node->lchild;
+                    }
+                    if(!StackEmpty())
+                    {
+                        node=Pop(fstack);
+                        Push(fstack,node->rchild);
+                        if(pre&&node->ltag==1)
+                        {
+                            node->lchild=pre;
+                        }
+                        pre=node;
+                    }
+                    
+                }
+                
+            }
+        }
+    } 
 }
 /**前序存储 */
 int Front(cluetreelist *bl)
@@ -129,6 +163,28 @@ void FrontDisPlay(cluetreelist *bl)
             node=node->lchild;
         }
 		index++;
+    }
+}
+/**中序显示 */
+void MidDisPlay(cluetreelist *bl)
+{
+    cluetreenode *node=NULL;
+    node=bl->top;
+    int index=0;
+    while(node)
+    {
+        while (node->ltag==0)
+        {
+            node=node->lchild;
+        }
+        do 
+        {
+            printf("The %d is %c \n",index,node->data);
+            index++;
+            node=node->rchild;
+        }while(node->rtag);
+        node=node->lchild;
+        
     }
 }
 cluetreenode *FrontGetNode(cluetreelist *bl,int value)
