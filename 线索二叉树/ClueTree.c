@@ -179,7 +179,7 @@ void FrontInsert(cluetreenode *Bp,int value)
         }
         else
         {
-            printf("申请空间失败\r\n);
+            printf("申请空间失败\r\n");
         }
     }
     else
