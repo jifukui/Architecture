@@ -16,6 +16,7 @@ cluetreelist* ClueTreeInit()
     }
     return nodelist;
 }
+/**存储线索二叉树 */
 int ClueTreeStror(cluetreelist *bl,int value)
 {
     if(bl)
@@ -69,6 +70,7 @@ int Mid(cluetreelist *bl)
 {
 
 }
+/**前序存储 */
 int Front(cluetreelist *bl)
 {
     if(bl)
@@ -109,7 +111,7 @@ int End(cluetreelist *bl)
 {
 
 }
-
+/**前序显示 */
 void FrontDisPlay(cluetreelist *bl)
 {
     cluetreenode *node=NULL;
@@ -127,5 +129,68 @@ void FrontDisPlay(cluetreelist *bl)
             node=node->lchild;
         }
 		index++;
+    }
+}
+cluetreenode *FrontGetNode(cluetreelist *bl,int value)
+{
+    if(bl)
+    {
+        cluetreenode *node=NULL;
+        node=bl->top;
+        int index=0;
+        while (node)
+        {
+            if(node->data==value)
+            {
+                return node;
+            }
+            if(node->ltag)
+            {
+                node=node->rchild;
+            }
+            else
+            {
+                node=node->lchild;
+            }
+		    index++;
+        }
+    }
+}
+void FrontInsert(cluetreenode *Bp,int value)
+{
+    if(Bp)
+    {
+        cluetreenode *node=NULL;
+        node=(cluetreenode *)malloc(sizeof(cluetreenode));
+        if(node)
+        {
+            node->data=value;
+            node->rtag=Bp->rtag;
+            if(Bp->rtag)
+            {
+                
+                Bp->rtag=0;
+               
+            }
+            node->rchild=Bp->rchild;
+            ((cluetreenode *)Bp->rchild)->lchild=node;
+            Bp->rchild=node;
+            node->lchild=Bp;
+        }
+        else
+        {
+            printf("申请空间失败\r\n);
+        }
+    }
+    else
+    {
+        printf("错误的数据\r\n");
+    }
+}
+void FrontDel(cluetreelist *bl,int value)
+{
+    if(bl)
+    {
+
     }
 }

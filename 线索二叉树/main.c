@@ -3,6 +3,7 @@
 int main()
 {
     cluetreelist *bl=NULL;
+    cluetreenode *node;
     bl=ClueTreeInit();
     int data;
     if(bl)
@@ -23,6 +24,9 @@ int main()
         }
         printf("前序线索二叉树\n");
         Front(bl);
+        FrontDisPlay(bl);
+        node=FrontGetNode(bl,'C');
+        FrontInsert(node,'J');
         FrontDisPlay(bl);
     }
     return 0;
