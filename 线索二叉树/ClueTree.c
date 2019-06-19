@@ -165,16 +165,28 @@ void FrontInsert(cluetreenode *Bp,int value)
         if(node)
         {
             node->data=value;
-            node->ltag=0;
             node->rtag=Bp->rtag;
-            if(Bp->rtag)
+            /**挂载的节点的左子不存在 */
+            if(Bp->ltag)
             {  
-                Bp->rtag=0;  
+                Bp->ltag=0;  
+                Bp->lchild=node;
+
+                node->rtag=Bp->rtag;
+                node->rchild=Bp->rchild;
+
+                node->ltag=1;
+                node->lchild=Bp;
+                
+                ((cluetreenode *)Bp->rchild)->lchild=node;
             }
-            node->rchild=Bp->rchild;
-            ((cluetreenode *)Bp->rchild)->lchild=node;
-            Bp->rchild=node;
-            node->lchild=Bp;
+            else
+            {
+                node->ltag=0;
+                Bp->lchild=node;
+
+                
+            }
         }
         else
         {
