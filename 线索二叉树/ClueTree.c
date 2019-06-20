@@ -90,10 +90,17 @@ int Mid(cluetreelist *bl)
                     if(!StackEmpty(stack))
                     {
                         node=Pop(stack);
-                        Push(stack,node->rchild);
-                        if(pre&&node->ltag==1)
+                        if(node->rchild&&((cluetreenode *)node->rchild)->data!='@')
+                        {
+                            Push(stack,node->rchild);
+                        }
+                        if(node->ltag==1)
                         {
                             node->lchild=pre;
+                        }
+                        if(pre)
+                        {
+                            pre->rchild=node;
                         }
                         pre=node;
                     }
