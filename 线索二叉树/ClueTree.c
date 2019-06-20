@@ -147,7 +147,53 @@ int Front(cluetreelist *bl)
 }
 int End(cluetreelist *bl)
 {
-
+    if(bt)
+    {
+        sStack *fstack=NULL;
+        fstack=StackInit();
+        if(!fstack)
+        {
+            return NULL;
+        }
+        sBinaryTreeNode *node=NULL;
+        int len=bt->length;
+        node=bt->root;
+        int index=0;
+        int data;
+        Push(fstack,node);
+        while (!StackEmpty(fstack))
+        {
+            node=Pop(fstack);
+            while (node&&node->data!='@')
+            { 
+                if(!node->flag)
+                {
+                    Push(fstack,node);
+                }
+				else
+				{
+					break;
+				}
+                node=node->lchild;
+            }
+			if (!StackEmpty(fstack))
+			{
+				node = Pop(fstack);
+				if (node->flag)
+				{
+					data = node->data;
+					printf("The %d is %c\n", index, data);
+					index++;	
+				}
+				else
+				{
+					node->flag = 1;
+					Push(fstack, node);
+				}	
+				Push(fstack, node->rchild);
+			}
+        }
+    }
 }
 /**前序显示 */
 void FrontDisPlay(cluetreelist *bl)
