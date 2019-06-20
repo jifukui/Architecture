@@ -90,18 +90,15 @@ int Mid(cluetreelist *bl)
                     if(!StackEmpty(stack))
                     {
                         node=Pop(stack);
-                        if(node->rchild&&((cluetreenode *)node->rchild)->data!='@')
-                        {
-                            Push(stack,node->rchild);
-                        }
-                        if(node->ltag==1)
-                        {
-                            node->lchild=pre;
-                        }
-                        if(pre)
-                        {
-                            pre->rchild=node;
-                        }
+                        Push(stack,node->rchild);
+						if (node->ltag)
+						{
+							node->lchild = pre;
+						}
+						if (pre&&pre->rtag)
+						{
+							pre->rchild = node;
+						}
                         pre=node;
                     }
                     
@@ -109,7 +106,7 @@ int Mid(cluetreelist *bl)
                 
             }
         }
-    } 
+    }
 }
 /**前序存储 */
 int Front(cluetreelist *bl)
@@ -188,10 +185,13 @@ void MidDisPlay(cluetreelist *bl)
         {
             printf("The %d is %c \n",index,node->data);
             index++;
-            node=node->rchild;
-        }while(node&&node->rtag);
-        node=node->lchild;
-        
+			if (node->rtag == 0)
+			{	
+				node = node->rchild;
+				break;
+			}
+			node = node->rchild;
+        }while(node);   
     }
 }
 cluetreenode *FrontGetNode(cluetreelist *bl,int value)
