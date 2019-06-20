@@ -182,7 +182,7 @@ void MidDisPlay(cluetreelist *bl)
             printf("The %d is %c \n",index,node->data);
             index++;
             node=node->rchild;
-        }while(node->rtag);
+        }while(node&&node->rtag);
         node=node->lchild;
         
     }
