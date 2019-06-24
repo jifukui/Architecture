@@ -20,5 +20,6 @@ int main()
             scanf("%d",&data);
         }
         BlanceTreeDisplay(list);
+        BlanceTreeMidDisplay(list);
     }
 }
