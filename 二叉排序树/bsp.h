@@ -9,11 +9,12 @@ typedef struct BlanceTreeList
 typedef struct BlanceTreeNode
 {
     void * data;
-    struct BlanceTreeNode *Lchild,Rchild;
+    struct BlanceTreeNode *Lchild,*Rchild;
 }BlanceTreeNode;
 BlanceTreeNode BlanceTreeInit();
-void BlanceTreeDestory(BlanceTreeList list);
-void BlanceTreeDisplay(BlanceTreeList list);
-BlanceTreeNode BlanceTreeInsert(BlanceTreeList List,BlanceTreeNode node);
-BlanceTreeNode BlanceTreeSearch(BlanceTreeList list,BlanceTreeNode node);
+void BlanceTreeDestory(BlanceTreeList *list);
+void BlanceTreeDisplay(BlanceTreeList *list);
+int BlanceTreeInsert(BlanceTreeList *List,char value);
+int BlanceTreeDelete(BlanceTreeList *List,char value);
+BlanceTreeNode *BlanceTreeSearch(BlanceTreeList *list,char value);
 #endif
