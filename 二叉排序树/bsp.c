@@ -143,19 +143,17 @@ int BlanceTreeDelete(BlanceTreeList *list,char value)
         BlanceTreeNode *temp=NULL;
         BlanceTreeNode *node=NULL;
         Dnode=list->value;
-        int flag=0;
         while (Dnode)
         {
-            temp=Dnode;
             if(Dnode->data>value)
             {
+                temp=Dnode;
                 Dnode=Dnode->Lchild;
-                flag=0;
             }
             else if(Dnode->data<value)
             {
+                temp=Dnode;
                 Dnode=Dnode->Rchild;
-                flag=1;
             }
             else
             {
@@ -182,8 +180,11 @@ int BlanceTreeDelete(BlanceTreeList *list,char value)
             }
             
         }
-        
-        
+        else
+        {
+            printf("have not find data %d\n",value);
+        }
+              
     }
     return 1;
 }
