@@ -2,11 +2,11 @@
 #include "stack.h"
 #include <stdio.h>
 #include <stdlib.h>
-BlanceTreeNode BlanceTreeInit()
+BlanceTreeList BlanceTreeInit()
 {
     BlanceTreeList *list=NULL;
     list=(BlanceTreeList *)malloc(sizeof(BlanceTreeList));
-    if(lsit)
+    if(list)
     {
         list->length=0;
         list->value=NULL;
@@ -25,6 +25,7 @@ void BlanceTreeDisplay(BlanceTreeList *list)
     if(list)
     {
         sStack *stack=StackInit();
+        int i=0;
         if(stack)
         {
             BlanceTreeNode *node=NULL;
@@ -46,7 +47,7 @@ void BlanceTreeDisplay(BlanceTreeList *list)
         }
     }
 }
-int BlanceTreeInsert(BlanceTreeList *List,char value)
+int BlanceTreeInsert(BlanceTreeList *list,char value)
 {
     if(list)
     {
@@ -100,11 +101,8 @@ int BlanceTreeInsert(BlanceTreeList *List,char value)
             return 0;
         }
         
-    }
-    
-    return -1
-    
-    
+    }   
+    return -1;  
 }
 int BlanceTreeDelete(BlanceTreeList *List,char value)
 {

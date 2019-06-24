@@ -11,7 +11,7 @@ typedef struct BlanceTreeNode
     void * data;
     struct BlanceTreeNode *Lchild,*Rchild;
 }BlanceTreeNode;
-BlanceTreeNode BlanceTreeInit();
+BlanceTreeList* BlanceTreeInit();
 void BlanceTreeDestory(BlanceTreeList *list);
 void BlanceTreeDisplay(BlanceTreeList *list);
 int BlanceTreeInsert(BlanceTreeList *List,char value);
