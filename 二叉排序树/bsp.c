@@ -97,7 +97,7 @@ int BlanceTreeInsert(BlanceTreeList *list,char value)
                 }
                 
             }
-            
+            list->length++;
             return 0;
         }
         
