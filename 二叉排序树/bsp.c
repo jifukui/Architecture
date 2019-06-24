@@ -80,9 +80,9 @@ int BlanceTreeInsert(BlanceTreeList *list,char value)
             node->Lchild=NULL;
             node->Rchild=NULL;
             node->data=value;
-            if(List->length==0)
+            if(list->length==0)
             {
-                List->value=node;
+                list->value=node;
             }
             else
             {
@@ -104,11 +104,11 @@ int BlanceTreeInsert(BlanceTreeList *list,char value)
     }   
     return -1;  
 }
-int BlanceTreeDelete(BlanceTreeList *List,char value)
+int BlanceTreeDelete(BlanceTreeList *list,char value)
 {
     
 }
-BlanceTreeNode *BlanceTreeSearch(BlanceTreeList list,char value)
+BlanceTreeNode *BlanceTreeSearch(BlanceTreeList *list,char value)
 {
     if(list)
     {
