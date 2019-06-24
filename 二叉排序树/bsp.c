@@ -2,7 +2,7 @@
 #include "stack.h"
 #include <stdio.h>
 #include <stdlib.h>
-BlanceTreeList BlanceTreeInit()
+BlanceTreeList *BlanceTreeInit()
 {
     BlanceTreeList *list=NULL;
     list=(BlanceTreeList *)malloc(sizeof(BlanceTreeList));
@@ -31,7 +31,7 @@ void BlanceTreeDisplay(BlanceTreeList *list)
             BlanceTreeNode *node=NULL;
             node=list->value;
             Push(stack,node);
-            while(!StackEmpty())
+            while(!StackEmpty(stack))
             {
                 node=Pop(stack);
                 while (node)
@@ -53,7 +53,7 @@ int BlanceTreeInsert(BlanceTreeList *list,char value)
     {
         BlanceTreeNode *Dnode=NULL;
         BlanceTreeNode *temp=NULL;
-        Dnode=List->value;
+        Dnode=list->value;
         int flag=0;
         while (Dnode)
         {
