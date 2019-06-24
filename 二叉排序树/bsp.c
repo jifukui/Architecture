@@ -198,11 +198,11 @@ BlanceTreeNode *BlanceTreeSearch(BlanceTreeList *list,char value)
         {
             if(Dnode->data>value)
             {
-
+                Dnode=Dnode->Lchild;
             }
             else if(Dnode->data<value)
             {
-
+                Dnode=Dnode->Rchild;
             }
             else
             {
