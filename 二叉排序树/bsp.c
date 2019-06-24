@@ -70,7 +70,7 @@ void BlanceTreeMidDisplay(BlanceTreeList *list)
                 if(!StackEmpty(stack))
                 {
                     node=Pop(stack);
-                    printf("%d is %d /n",i,(int)node->data);
+                    printf("%d is %d \n",i,(int)node->data);
                     i++;
                     Push(stack,node->Rchild);
                 }

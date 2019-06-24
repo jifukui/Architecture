@@ -3,6 +3,7 @@
 int main()
 {
     BlanceTreeList* list=NULL;
+    BlanceTreeNode *node=NULL;
     list=BlanceTreeInit();
     if(list)
     {
@@ -21,5 +22,28 @@ int main()
         }
         BlanceTreeDisplay(list);
         BlanceTreeMidDisplay(list);
+        node=BlanceTreeSearch(list,12);
+        if(node)
+        {
+            printf("have get value 12\n");
+        }
+        else
+        {
+            printf("have not get value 12\n");
+        }
+        node=BlanceTreeSearch(list,32);
+        if(node)
+        {
+            printf("have get value 32\n");
+        }
+        else
+        {
+            printf("have not get value 32\n");
+        }
+        BlanceTreeDelete(12);
+        BlanceTreeMidDisplay(list);
+        BlanceTreeDelete(32);
+        BlanceTreeMidDisplay(list);
     }
+    return 0;
 }
