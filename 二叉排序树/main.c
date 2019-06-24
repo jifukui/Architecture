@@ -9,9 +9,9 @@ int main()
         int data;
         printf("输入数据\n");
         data=getchar();
-        while (data!='#')
+        while (data!='!')
         {
-            printf("输入数据是:%c\n",data);
+            printf("输入数据是:%d\n",data);
             if(BlanceTreeInsert(list,data)<0)
             {
                 break;
