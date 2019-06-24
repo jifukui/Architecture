@@ -40,9 +40,9 @@ int main()
         {
             printf("have not get value 32\n");
         }
-        BlanceTreeDelete(12);
+        BlanceTreeDelete(list,12);
         BlanceTreeMidDisplay(list);
-        BlanceTreeDelete(32);
+        BlanceTreeDelete(list,32);
         BlanceTreeMidDisplay(list);
     }
     return 0;
