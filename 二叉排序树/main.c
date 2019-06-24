@@ -8,8 +8,8 @@ int main()
     {
         int data;
         printf("输入数据\n");
-        data=getchar();
-        while (data!='!')
+        scanf("%d",&data);
+        while (data!=0)
         {
             printf("输入数据是:%d\n",data);
             if(BlanceTreeInsert(list,data)<0)
@@ -17,8 +17,7 @@ int main()
                 break;
             }
             printf("输入数据\n");
-            getchar();
-            data=getchar();
+            scanf("%d",&data);
         }
         BlanceTreeDisplay(list);
     }
