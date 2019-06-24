@@ -168,10 +168,10 @@ int BlanceTreeDelete(BlanceTreeList *list,char value)
                 node=Dnode->Rchild;
                 while (node->Rchild)
                 {
-                    node=Dnode->Rchild;
+                    node=node->Rchild;
                 }
                 node->Rchild=temp->Rchild;
-                temp->Rchild=NULL;
+                //temp->Rchild=NULL;
                 
             }
             else
