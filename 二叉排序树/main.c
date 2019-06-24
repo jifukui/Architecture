@@ -44,6 +44,8 @@ int main()
         BlanceTreeMidDisplay(list);
         BlanceTreeDelete(list,32);
         BlanceTreeMidDisplay(list);
+        BlanceTreeDelete(list,53);
+        BlanceTreeMidDisplay(list);
     }
     return 0;
 }
