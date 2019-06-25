@@ -178,7 +178,7 @@ int BlanceTreeDelete(BlanceTreeList *list,char value)
                     temp->Lchild=node;
                     if(temp1)
                     {
-                        temp1->Rchild=NULL
+                        temp1->Rchild=NULL;
                     }  
                 }
                 else
