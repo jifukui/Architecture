@@ -142,7 +142,7 @@ int BlanceTreeDelete(BlanceTreeList *list,char value)
         BlanceTreeNode *Dnode=NULL;
         BlanceTreeNode *temp=NULL;
         Dnode=list->value;
-        temp=list->value;
+        //temp=list->value;
         while (Dnode)
         {
             if(Dnode->data>value)
