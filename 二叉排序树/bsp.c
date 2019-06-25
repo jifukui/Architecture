@@ -141,8 +141,8 @@ int BlanceTreeDelete(BlanceTreeList *list,char value)
     {
         BlanceTreeNode *Dnode=NULL;
         BlanceTreeNode *temp=NULL;
-        BlanceTreeNode *node=NULL;
         Dnode=list->value;
+        temp=list->value;
         while (Dnode)
         {
             if(Dnode->data>value)
@@ -162,23 +162,47 @@ int BlanceTreeDelete(BlanceTreeList *list,char value)
         }
         if(Dnode)
         {
-            if(Dnode->Lchild)
+            /**有左子树 */
+           if(Dnode->Lchild)
             {
-                temp->Lchild=Dnode->Lchild;
-                node=Dnode->Rchild;
+                BlanceTreeNode *temp1=NULL;
+                BlanceTreeNode *node=NULL;
+                node=Dnode->Lchild;
                 while (node->Rchild)
                 {
+                    temp1=node;
                     node=node->Rchild;
                 }
-                node->Rchild=temp->Rchild;
-                //temp->Rchild=NULL;
-                
+                if(temp)
+                {
+                    temp->Lchild=node;
+                    if(temp1)
+                    {
+                        temp1->Rchild=NULL
+                    }  
+                }
+                else
+                {
+                    list->value=node;
+                    if(temp1)
+                    {
+                        temp1->Rchild=NULL;
+                    }
+                }     
             }
+            /**无左子树 */
             else
             {
-                temp->Lchild=Dnode->Rchild;
+                if(temp)
+                {
+                    temp->Lchild=Dnode->Rchild;
+                }
+                else
+                {
+                    list->value=Dnode->Rchild;
+                }
+                
             }
-            
         }
         else
         {
