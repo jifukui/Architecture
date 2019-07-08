@@ -78,138 +78,143 @@ void BlanceTreeMidDisplay(BlanceTreeList *list)
         }
     }
 }
-int BlanceTreeInsert(BlanceTreeList *list,char value)
+int BlanceTreeInsert(BlanceTreeList *list,int value)
 {
-    if(list)
-    {
-        BlanceTreeNode *Dnode=NULL;
-        BlanceTreeNode *temp=NULL;//待插入节点的父节点
-        BlanceTreeNode *pa=NULL;//待插入节点的爷爷节点
-        BlanceTreeNode *ppa=NULL;
-        Dnode=list->value;
-        int flag=0;
-        while (Dnode)
-        {
-            if(pa)
-            {
-                ppa=pa;
-            }
-            if(temp)
-            {
-                pa=temp;
-            }
-            temp=Dnode;
-            if(Dnode->data>value)
-            {
-                Dnode=Dnode->Lchild;
-                flag=0;
-            }
-            else if(Dnode->data<value)
-            {
-                Dnode=Dnode->Rchild;
-                flag=1;
-            }
-            else
-            {
-                return 1;
-            }    
-        }
-        BlanceTreeNode *node=NULL;//插入的节点
-        node=(BlanceTreeNode *)malloc(sizeof(BlanceTreeNode));
-        if(node)
-        {
-            node->Lchild=NULL;
-            node->Rchild=NULL;
-            node->data=value;
-            node->BF=0;
-            if(list->length==0)
-            {
-                list->value=node;
-            }
-            else
-            {
-                /* code */
-                if(flag)
-                {
-                    temp->Rchild=node;
-                    temp->BF--;
-                    if(pa)
-                    {
-						if (pa->data > temp->data)
-						{
-							pa->BF++;
-						}
-						else
-						{
-							pa->BF--;
-						}
-                    }
-                }
-                else
-                {
-                    temp->Lchild=node;
-                    temp->BF++;
-                    if(pa)
-                    {
-						if (pa->data > temp->data)
-						{
-							pa->BF++;
-						}
-						else
-						{
-							pa->BF--;
-						}
-                    }
-                }
-            }
-            list->length++;
-        }
-        if(pa&&(pa->BF>=2||pa->BF<=-2))
-        {
-            if(pa->BF==2)
-            {
-                if(temp->BF==1)
-                {
-                    Dnode=BlanceTreeLL(pa);
-                }
-                else if(temp->BF==-1)
-                {
-                    Dnode=BlanceTreeRL(pa);   
-                }    
-            }
-            else
-            {
-                if(temp->BF==1)
-                {
-                    Dnode=BlanceTreeLR(pa);
-                }
-                else if(temp->BF==-1)
-                {
-                    Dnode=BlanceTreeRR(pa);
-                }
-                
-            }
-			if (ppa)
+	if (list)
+	{
+		BlanceTreeNode *node1=NULL, *node2=NULL, *node3=NULL, *node4=NULL, *node = NULL;
+		node = (BlanceTreeNode *)malloc(sizeof(BlanceTreeNode));
+		if (node)
+		{
+			node->data = value;
+			node->BF = 0;
+			node->Lchild = NULL;
+			node->Rchild = NULL;
+			node1 = node3 = list->value;
+			/* 寻找插入位置 */
+			if (!node1)
 			{
-				if (ppa->data>temp->data)
+				list->value = node;
+				return 1;
+			}
+			while (node1)
+			{
+				
+				if (node1->data == value)
 				{
-					ppa->Lchild = Dnode;
+					return 0;
+				}
+				if (node1->BF != 0)
+				{
+					node3 = node1;
+					node4 = node2;
+				}
+				node2 = node1;
+				if (node1->data > value)
+				{
+					node1 = node1->Lchild;
 				}
 				else
 				{
-					ppa->Rchild = Dnode;
+					node1 = node1->Rchild;
 				}
+			}
+			/* 进行节点插入 */
+			if (value<node2->data)
+			{
+				node2->Lchild = node;
 			}
 			else
 			{
-				list->value = Dnode;
+				node2->Rchild = node;
 			}
-        } 
-		return 0;
-    }   
-    return -1;  
+			if (node->data < node3->data)
+			{
+				node1 = node3->Lchild;
+				node2 = node1;
+				node3->BF += 1;
+			}
+			else
+			{
+				node1 = node3->Rchild;
+				node2 = node1;
+				node3->BF -= 1;
+			}
+			while (node1!=node)
+			{
+				if (node->data < node1->data)
+				{
+					node1->BF = 1;
+					node1 = node1->Lchild;
+				}
+				else
+				{
+					node1->BF = -1;
+					node1 = node1->Rchild;
+				}
+			}
+			switch (node3->BF)
+			{
+			case 2:
+				switch (node2->BF)
+				{
+				case 1:
+					node1 = BlanceTreeLL(node3);
+					break;
+				case -1:
+					node1 = BlanceTreeLR(node3);
+					break;
+				}
+				if (!node4)
+				{
+					list->value = node1;
+				}
+				else
+				{
+					if (node4->Lchild == node3)
+					{
+						node4->Lchild = node1;
+					}
+					else
+					{
+						node4->Rchild = node1;
+					}
+				}
+				break;
+			case -2:
+				switch (node2->BF)
+				{
+				case -1:
+					node1 = BlanceTreeRR(node3);
+					break;
+				case 1:
+					node1 = BlanceTreeRL(node3);
+					break;
+				}
+				if (!node4)
+				{
+					list->value = node1;
+				}
+				else
+				{
+					if (node4->Lchild == node3)
+					{
+						node4->Lchild = node1;
+					}
+					else
+					{
+						node4->Rchild = node1;
+					}
+				}
+				break;
+			}
+			return 1;
+		}
+	}
+	return -1;
+        
 }
-int BlanceTreeDelete(BlanceTreeList *list,char value)
+int BlanceTreeDelete(BlanceTreeList *list,int value)
 {
     if(list)
     {
@@ -283,7 +288,7 @@ int BlanceTreeDelete(BlanceTreeList *list,char value)
     }
     return 1;
 }
-BlanceTreeNode *BlanceTreeSearch(BlanceTreeList *list,char value)
+BlanceTreeNode *BlanceTreeSearch(BlanceTreeList *list,int value)
 {
     BlanceTreeNode *Dnode=NULL;
     if(list)
@@ -312,45 +317,79 @@ BlanceTreeNode *BlanceTreeLL(BlanceTreeNode *node)
 {
     BlanceTreeNode *no=NULL;
     no=node->Lchild;
-    no->Rchild=node;
-    node->Lchild=NULL;
-    no->BF=0;
-    node->BF=0;
+    node->Lchild=no->Rchild;
+	no->Rchild = node;
+	no->BF = 0;
+	node->BF = 0;
     return no;
 }
 BlanceTreeNode *BlanceTreeRR(BlanceTreeNode *node)
 {
     BlanceTreeNode *no=NULL;
     no=node->Rchild;
-    no->Lchild=node;
-    node->Rchild=NULL;
+    node->Rchild=no->Lchild;
+	no->Lchild = node;
     no->BF=0;
     node->BF=0;
     return no;
 }
 BlanceTreeNode *BlanceTreeLR(BlanceTreeNode *node)
 {
-    BlanceTreeNode *no=NULL;
-    node->BF=0;
-    no=node->Rchild;
-    no->Lchild->Lchild=node;
-	node->Rchild = NULL;
-	no->BF = 2;
-	no->Lchild->BF = 1;
-	node->BF = 0;
-    node=BlanceTreeLL(no);
-    return node;
+	BlanceTreeNode *nod1, *nod2;
+	nod1 = node->Lchild;
+	nod2 = nod1->Rchild;
+	node->Rchild = nod2->Lchild;
+	nod1->Lchild = nod2->Rchild;
+	nod2->Rchild = node;
+	nod2->Lchild = nod1;
+	switch (nod2->BF)
+	{
+	case 1:
+	{
+		node->BF = 0;
+		nod1->BF = -1;
+		break;
+	}
+	case -1:
+	{
+		node->BF = -1;
+		nod1->BF = 0;
+		break;
+	}
+	case 0:
+	{
+		node->BF = 0;
+		nod1->BF = 0;
+		break;
+	}
+	}
+	nod2->BF = 0;
+	return nod2;
 }
 BlanceTreeNode *BlanceTreeRL(BlanceTreeNode *node)
 {
-    BlanceTreeNode *no=NULL;
-    node->BF=0;
-    no=node->Lchild;
-    no->Rchild->Rchild=node;
-	node->Lchild = NULL;
-	no->BF = -2;
-	no->Rchild->BF = -1;
-	node->BF = 0;
-    node=BlanceTreeRR(no);
-    return node;
+    BlanceTreeNode *nod1,*nod2;
+	nod1 = node->Rchild;
+	nod2 = nod1->Lchild;
+	node->Rchild = nod2->Lchild;
+	nod1->Lchild = nod2->Rchild;
+	nod2->Lchild = node;
+	nod2->Rchild = nod1;
+	switch (nod2->BF)
+	{
+	case 1:
+		node->BF = 0;
+		nod1->BF = -1;
+		break;
+	case -1:
+		node->BF = -1;
+		nod1->BF = 0;
+		break;
+	case 0:
+		node->BF = 0;
+		nod1->BF = 0;
+		break;
+	}
+	nod2->BF = 0;
+    return nod2;
 }
