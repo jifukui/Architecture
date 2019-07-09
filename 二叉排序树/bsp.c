@@ -139,6 +139,7 @@ int BlanceTreeDelete(BlanceTreeList *list,char value)
 {
     if(list)
     {
+        /**Dnode为删除节点，temp为删除节点的父节点 */
         BlanceTreeNode *Dnode=NULL;
         BlanceTreeNode *temp=NULL;
         Dnode=list->value;
@@ -162,20 +163,30 @@ int BlanceTreeDelete(BlanceTreeList *list,char value)
         }
         if(Dnode)
         {
-            /**有左子树 */
+            /**删除节点有左子树 */
            if(Dnode->Lchild)
             {
-                BlanceTreeNode *temp1=NULL;
+                /**删除节点左子树的最大值的父节点 */
+                //BlanceTreeNode *temp1=NULL;
+                /**删除节点左子树的最大值 */
                 BlanceTreeNode *node=NULL;
                 node=Dnode->Lchild;
                 while (node->Rchild)
                 {
-                    temp1=node;
+                    //temp1=node;
                     node=node->Rchild;
                 }
+                /**删除节点是否为根节点 */
                 if(temp)
                 {
-                    temp->Lchild=node;   
+                    if(temp->data<Dnode->data)
+                    {
+                        temp->Rchild=Dnode->Rchild;
+                    }
+                    else
+                    {
+                        temp->Lchild=Dnode->Rchild;
+                    }   
                 }
                 else
                 {
@@ -190,9 +201,18 @@ int BlanceTreeDelete(BlanceTreeList *list,char value)
             /**无左子树 */
             else
             {
+                /**删除的节点是否为根节点对于不是根节点的处理 */
                 if(temp)
                 {
-                    temp->Lchild=Dnode->Rchild;
+                    if(temp->data<Dnode->data)
+                    {
+                        temp->Rchild=Dnode->Rchild;
+                    }
+                    else
+                    {
+                        temp->Lchild=Dnode->Rchild;
+                    }
+                    
                 }
                 else
                 {
