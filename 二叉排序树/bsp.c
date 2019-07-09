@@ -193,10 +193,10 @@ int BlanceTreeDelete(BlanceTreeList *list,char value)
                     list->value=node;
                 } 
                 node->Rchild=Dnode->Rchild;
-                if(temp1)
+                /* if(temp1)
                 {
                     temp1->Rchild=NULL;
-                }      
+                }  */    
             }
             /**无左子树 */
             else
