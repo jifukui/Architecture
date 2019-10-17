@@ -113,6 +113,10 @@ int LocateElem(plist list,int data)
 int PreElem(plist list,int data)
 {
     int index=LocateElem(list,data);
+    if(index==LIST_ERR)
+    {
+        return index;
+    }
     if(index>0)
     {
         return list->data[index-1];
@@ -126,6 +130,10 @@ int PreElem(plist list,int data)
 int SuccElem(plist list,int data)
 {
     int index=LocateElem(list,data);
+    if(index==LIST_ERR)
+    {
+        return index;
+    }
     if((list->last-1)>index)
     {
         return list->data[index+1];

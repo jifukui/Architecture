@@ -9,7 +9,7 @@ typedef struct{
     int size;
 }List,*plist;
 /**初始化线性表*/
-List * ListInit();
+List * ListInit(List * list);
 /**销毁线性表*/
 List * ListDestroy(List *list);
 /**设置线性表为空*/
