@@ -54,7 +54,7 @@ int find(heap *addr,int data,int *index)
                 #ifdef DEBUG
                     printf("the pos is %d\n",pos);
                 #endif
-                return ERR;
+                //return ERR;
             }
             else
             {
@@ -65,8 +65,8 @@ int find(heap *addr,int data,int *index)
                 }
                 else
                 {
-                    Push(stack,pos*2+1);
                     Push(stack,pos*2+2);
+                    Push(stack,pos*2+1);
                 }    
             }
         }while(!StackEmpty(stack));
