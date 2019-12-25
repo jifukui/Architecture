@@ -18,7 +18,7 @@ int find(heap *addr,int data,int *index);
 /**获取*/
 int get(heap* addr,int index,int *data);
 /**删除*/
-int remove(heap *addr,int index);
+int JIremove(heap *addr,int index);
 /**销毁*/
 void destory(heap *);
 /**显示堆中的内容*/

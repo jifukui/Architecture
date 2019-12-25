@@ -55,7 +55,7 @@ int main()
         {
             printf("查找到此数据位置在%d\n",index);
         }
-        status=remove(test,1);
+        status=JIremove(test,1);
         if(status==ERR)
         {
             printf("删除数据失败\n");
@@ -66,7 +66,7 @@ int main()
         }
         printf("当前堆的长度:%d\n",getlength(test));
         display(test);
-        status=remove(test,6);
+        status=JIremove(test,6);
         if(status==ERR)
         {
             printf("删除数据失败\n");

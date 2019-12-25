@@ -92,7 +92,7 @@ int get(heap* addr,int index,int *data)
     }
     return ERR;
 }
-int remove(heap *addr,int index)
+int JIremove(heap *addr,int index)
 {
     if(addr&&index>=0&&index<addr->current)
     {
