@@ -65,8 +65,11 @@ int find(heap *addr,int data,int *index)
                 }
                 else if(value>data)
                 {
-                    Push(stack,pos*2+2);
-                    Push(stack,pos*2+1);
+                    if(pos*2<addr->current)
+                    {
+                        Push(stack,pos*2+2);
+                        Push(stack,pos*2+1);
+                    }
                 }
                 else
                 {
