@@ -46,6 +46,15 @@ int main()
         {
             printf("查找到此数据位置在%d\n",index);
         }
+        status=find(test,19,&index);
+        if(status==ERR)
+        {
+            printf("未查找到此数据\n");
+        }
+        else
+        {
+            printf("查找到此数据位置在%d\n",index);
+        }
         destory(test);
     }
     else
