@@ -1,4 +1,5 @@
 #include "heap.h"
+#include "stack.h"
 heap *init()
 {
     heap *data=NULL;
