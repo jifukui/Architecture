@@ -10,6 +10,10 @@ int main()
         add(test,15);
         add(test,6);
         add(test,56);
+        add(test,47);
+        add(test,40);
+        add(test,30);
+        add(test,19);
         display(test);
         destory(test);
     }
