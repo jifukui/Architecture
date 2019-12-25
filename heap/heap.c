@@ -63,10 +63,14 @@ int find(heap *addr,int data,int *index)
                     *index=pos;
                     return SUCCESS;
                 }
-                else
+                else if(value>data)
                 {
                     Push(stack,pos*2+2);
                     Push(stack,pos*2+1);
+                }
+                else
+                {
+                    
                 }    
             }
         }while(!StackEmpty(stack));
