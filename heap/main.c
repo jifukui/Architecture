@@ -7,6 +7,12 @@ int main()
     if(test)
     {
         printf("创建堆成功\n");
+        add(test,15);
+        add(test,6);
+        add(test,56);
+        display(test);
+        destory(test);
+
     }
     else
     {
