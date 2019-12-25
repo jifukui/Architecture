@@ -14,9 +14,9 @@ heap *init();
 /**向堆中添加数据*/
 int add(heap*,int data);
 /**查找*/
-int find(heap *,int *data,int *index);
+int find(heap *addr,int data,int *index);
 /**获取*/
-int get(heap*,int *data);
+int get(heap* addr,int index,int *data);
 /**销毁*/
 void destory(heap *);
 /**显示堆中的内容*/
