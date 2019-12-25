@@ -71,10 +71,6 @@ int find(heap *addr,int data,int *index)
                         Push(stack,pos*2+1);
                     }
                 }
-                else
-                {
-                    
-                }    
             }
         }while(!StackEmpty(stack));
     }
@@ -93,6 +89,31 @@ int get(heap* addr,int index,int *data)
             *data=addr->data[index];
             return SUCCESS;
         }
+    }
+    return ERR;
+}
+int remove(heap *addr,int index)
+{
+    if(addr&&index>=0&&index<addr->current)
+    {
+        int value=addr->data[index];
+        int last=addr->current;
+        addr->current-=1;
+        int next=index;
+        addr->data[index]=addr->data[addr->current];
+        next=next*2+1;
+        int temp;
+        while (next<last)
+        {    
+            if(value<addr->data[next]||value<addr->data[next++])
+            {
+                addr->data[index]=addr->data[next];
+                addr->data[next]=value;
+            }
+            index=next;
+            next=next*2+1;
+        }
+        return SUCCESS;
     }
     return ERR;
 }
