@@ -17,8 +17,11 @@ int add(heap* addr,int data)
         int next=(temp%2)?(temp-1)/2:temp/2-1;
         int value=data;
         addr->data[addr->current++]=data;
-        while (addr->data[temp]>addr->data[next]||next<0)
+        while (addr->data[temp]>addr->data[next]&&temp>0)
         {
+            #ifdef DEBUG
+            printf("The last is %d the new %d the temp %d the next %d\n",addr->data[temp],addr->data[next],temp,next);
+            #endif
             addr->data[temp]=addr->data[next];
             addr->data[next]=value;
             temp=next;

@@ -12,7 +12,6 @@ int main()
         add(test,56);
         display(test);
         destory(test);
-
     }
     else
     {

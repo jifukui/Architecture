@@ -4,6 +4,7 @@
 #define HEADSIZE 256
 #define ERR 1
 #define SUCCESS 0
+#define DEBUG
 typedef struct {
     int data[HEADSIZE];
     int current;
