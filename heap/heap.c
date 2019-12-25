@@ -32,7 +32,7 @@ int add(heap* addr,int data)
     }
     
 }
-int get(heap*,int *data)
+int get(heap* addr,int *data)
 {
     return SUCCESS;
 }
