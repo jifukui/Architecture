@@ -108,7 +108,7 @@ int JIremove(heap *addr,int index)
             #ifdef DEBUG
             printf("the next is %d\n",next);
             #endif
-            if(value<addr->data[next]||value<addr->data[next++])
+            if(value<addr->data[next]||value<addr->data[++next])
             {
                 addr->data[index]=addr->data[next];
                 addr->data[next]=value;
