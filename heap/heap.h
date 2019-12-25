@@ -4,7 +4,7 @@
 #define HEADSIZE 256
 #define ERR 1
 #define SUCCESS 0
-struct typdef{
+typedef struct {
     int data[HEADSIZE];
     int current;
 }heap;
