@@ -1,5 +1,5 @@
 #include "heap.h"
-head *init()
+heap *init()
 {
     heap *data=NULL;
     data=(heap *)malloc(sizeof(heap));
