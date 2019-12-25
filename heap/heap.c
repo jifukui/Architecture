@@ -51,6 +51,9 @@ int find(heap *addr,int data,int *index)
             status=get(addr,pos,&value);
             if(status)
             {
+                #ifdef DEBUG
+                    printf("the pos is %d\n",pos);
+                #endif
                 return ERR;
             }
             else
@@ -68,6 +71,9 @@ int find(heap *addr,int data,int *index)
             }
         }while(!StackEmpty(stack));
     }
+    #ifdef DEBUG
+        printf("No find\n");
+    #endif
     return ERR;
     
 }
