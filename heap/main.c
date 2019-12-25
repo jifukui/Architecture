@@ -6,6 +6,7 @@ int main()
     test=init();
     int value;
     int status;
+    int index;
     if(test)
     {
         printf("创建堆成功\n");
@@ -26,8 +27,16 @@ int main()
         {
             printf("获取数据成功%d\n",value);
         }
-        
         display(test);
+        status=find(test,6,&index);
+        if(status==ERR)
+        {
+            printf("未查找到此数据\n");
+        }
+        else
+        {
+            printf("查找到此数据位置在%d\n",index);
+        }
         destory(test);
     }
     else

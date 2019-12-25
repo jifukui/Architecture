@@ -39,12 +39,35 @@ int find(heap *addr,int data,int *index)
 {
     if(addr)
     {
-        
+        int value;
+        int status;
+        int pos=0;
+        sStack *stack=NULL;
+        stack=StackInit();
+        Push(stack,pos);
+        do{
+            pos=Pop(stack);
+            status=get(addr,pos,&value);
+            if(status)
+            {
+                return ERR;
+            }
+            else
+            {
+                if(value==data)
+                {
+                    *index=pos;
+                    return SUCCESS;
+                }
+                else
+                {
+                    Push(stack,pos*2+1);
+                    Push(stack,pos*2+2);
+                }    
+            }
+        }while(!StackEmpty(stack));
     }
-    else
-    {
-        return ERR;
-    }
+    return ERR;
     
 }
 int get(heap* addr,int index,int *data)
@@ -56,7 +79,6 @@ int get(heap* addr,int index,int *data)
             *data=addr->data[index];
             return SUCCESS;
         }
-
     }
     return ERR;
 }
