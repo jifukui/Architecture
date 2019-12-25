@@ -35,9 +35,30 @@ int add(heap* addr,int data)
     }
     
 }
-int get(heap* addr,int *data)
+int find(heap *addr,int data,int *index)
 {
-    return SUCCESS;
+    if(addr)
+    {
+        
+    }
+    else
+    {
+        return ERR;
+    }
+    
+}
+int get(heap* addr,int index,int *data)
+{
+    if(index>=0&&addr)
+    {
+        if(index<addr->current)
+        {
+            *data=addr->data[index];
+            return SUCCESS;
+        }
+
+    }
+    return ERR;
 }
 void destory(heap *addr)
 {
