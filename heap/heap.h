@@ -8,7 +8,7 @@ struct typdef{
     int data[HEADSIZE];
     int current;
 }heap;
-head *init();
+heap *init();
 int add(heap*,int data);
 int get(heap*,int *data);
 void destory(heap *);
