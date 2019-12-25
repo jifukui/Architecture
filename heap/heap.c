@@ -95,16 +95,19 @@ int get(heap* addr,int index,int *data)
 int JIremove(heap *addr,int index)
 {
     if(addr&&index>=0&&index<addr->current)
-    {
-        int value=addr->data[index];
+    { 
         int last=addr->current;
         addr->current-=1;
         int next=index;
         addr->data[index]=addr->data[addr->current];
+        int value=addr->data[index];
         next=next*2+1;
         int temp;
         while (next<last)
         {    
+            #ifdef DEBUG
+            printf("the next is %d\n",next);
+            #endif
             if(value<addr->data[next]||value<addr->data[next++])
             {
                 addr->data[index]=addr->data[next];
