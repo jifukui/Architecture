@@ -20,7 +20,7 @@ int add(heap* addr,int data)
         while (addr->data[temp]>addr->data[next]||next<0)
         {
             addr->data[temp]=addr->data[next];
-            addr->date[next]=value;
+            addr->data[next]=value;
             temp=next;
             next=(temp%2)?(temp-1)/2:temp/2-1;
         }
@@ -34,13 +34,13 @@ int add(heap* addr,int data)
 }
 int get(heap*,int *data)
 {
-
+    return SUCCESS;
 }
 void destory(heap *addr)
 {
     if(addr)
     {
-        free(addr)
+        free(addr);
     }
 }
 void display(heap *addr)
