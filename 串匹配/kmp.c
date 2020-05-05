@@ -10,6 +10,7 @@ int GetPostion(char *str1,char *str2)
     int j=0;
     if(str1&&str2)
     {
+        //生成模式数组
         Getmode(str2,mode);
         printf("普通模式数组为:\n");
         for(i=0;i<strlen(str2);i++)
@@ -20,12 +21,17 @@ int GetPostion(char *str1,char *str2)
         j=0;
         while (i<strlen(str1)&&j<strlen(str2))
         {
-            if(str1[i]!=str2[j])
+            //对于没有匹配上调用设置模式数组的位置
+            if(j==-1||str1[i]==str2[j])
+            {
+                i++;
+                j++;
+            }
+            else
             {
                 j=mode[j];
             }
-            j++;
-            i++;
+            
         }
         printf("The j is %d\n",j);
         printf("The i is %d\n",i);
@@ -70,6 +76,10 @@ int GetSuperPostion(char *str1,char *str2)
     printf("This is Supper Position\n");
     return -1;
 }
+/**普通的方式产生next数组
+ * str为输入的数组，mode数生成的next数组
+ * i为next数组的指针，j为next数组中的值
+*/
 void Getmode(char *str,unsigned int *mode)
 {
     int i=0;

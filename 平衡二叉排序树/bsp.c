@@ -78,11 +78,18 @@ void BlanceTreeMidDisplay(BlanceTreeList *list)
         }
     }
 }
+/**节点的插入算法
+ * node1为主要操作的节点
+ * node2为当前主要操作的节点的父节点
+ * node3为第一个平衡系数不为0的节点
+ * node4位当前不平衡的节点的父节点
+ * **/
 int BlanceTreeInsert(BlanceTreeList *list,int value)
 {
 	if (list)
 	{
 		BlanceTreeNode *node1=NULL, *node2=NULL, *node3=NULL, *node4=NULL, *node = NULL;
+		/**分配节点空间*/
 		node = (BlanceTreeNode *)malloc(sizeof(BlanceTreeNode));
 		if (node)
 		{
@@ -91,25 +98,29 @@ int BlanceTreeInsert(BlanceTreeList *list,int value)
 			node->Lchild = NULL;
 			node->Rchild = NULL;
 			node1 = node3 = list->value;
-			/* 寻找插入位置 */
+			/*对于是空的处理 */
 			if (!node1)
 			{
 				list->value = node;
 				return 1;
 			}
+			/**遍历找到插入节点*/
 			while (node1)
 			{
-				
+				/**对于这个值存在的处理*/
 				if (node1->data == value)
 				{
 					return 0;
 				}
+				/**对于node1的平衡系数不会0的处理*/
 				if (node1->BF != 0)
 				{
 					node3 = node1;
 					node4 = node2;
 				}
+				/***/
 				node2 = node1;
+				/**判断是放在左子树上还是放在右子树上*/
 				if (node1->data > value)
 				{
 					node1 = node1->Lchild;
@@ -119,7 +130,7 @@ int BlanceTreeInsert(BlanceTreeList *list,int value)
 					node1 = node1->Rchild;
 				}
 			}
-			/* 进行节点插入 */
+			/**设置插入位置*/
 			if (value<node2->data)
 			{
 				node2->Lchild = node;
@@ -128,6 +139,9 @@ int BlanceTreeInsert(BlanceTreeList *list,int value)
 			{
 				node2->Rchild = node;
 			}
+			/**修改node1为第一个平衡系数不为1的节点的对应位置的子节点
+			 * 并且修改此节点的平衡系数
+			*/
 			if (node->data < node3->data)
 			{
 				node1 = node3->Lchild;
@@ -140,6 +154,7 @@ int BlanceTreeInsert(BlanceTreeList *list,int value)
 				node2 = node1;
 				node3->BF -= 1;
 			}
+			/**修改从不平衡的节点到插入节点的平衡系数*/
 			while (node1!=node)
 			{
 				if (node->data < node1->data)
@@ -153,6 +168,7 @@ int BlanceTreeInsert(BlanceTreeList *list,int value)
 					node1 = node1->Rchild;
 				}
 			}
+			/**根据第一个不平衡的节点的平衡系数极性调整*/
 			switch (node3->BF)
 			{
 			case 2:
@@ -313,6 +329,16 @@ BlanceTreeNode *BlanceTreeSearch(BlanceTreeList *list,int value)
     }
     return Dnode;
 }
+/***
+ * 只是顺时针旋转
+ * node为不平衡的节点
+ *     				node(36)
+ *                  .
+ *                .
+ * 				no(23)
+ *              .
+ *            .
+*/
 BlanceTreeNode *BlanceTreeLL(BlanceTreeNode *node)
 {
     BlanceTreeNode *no=NULL;
@@ -323,6 +349,17 @@ BlanceTreeNode *BlanceTreeLL(BlanceTreeNode *node)
 	node->BF = 0;
     return no;
 }
+/**
+ * 只是逆时针的旋转
+ * node 为不平衡的节点
+ *      node(13)
+ * 				.
+ * 				  .
+ * 				  no(23)
+ * 					 .
+ *    				   .
+ * 						36
+*/
 BlanceTreeNode *BlanceTreeRR(BlanceTreeNode *node)
 {
     BlanceTreeNode *no=NULL;
@@ -333,6 +370,9 @@ BlanceTreeNode *BlanceTreeRR(BlanceTreeNode *node)
     node->BF=0;
     return no;
 }
+/**
+ * 先顺时针后逆时针旋转
+*/
 BlanceTreeNode *BlanceTreeLR(BlanceTreeNode *node)
 {
 	BlanceTreeNode *nod1, *nod2;
@@ -366,6 +406,9 @@ BlanceTreeNode *BlanceTreeLR(BlanceTreeNode *node)
 	nod2->BF = 0;
 	return nod2;
 }
+/***
+ * 
+*/
 BlanceTreeNode *BlanceTreeRL(BlanceTreeNode *node)
 {
     BlanceTreeNode *nod1,*nod2;
