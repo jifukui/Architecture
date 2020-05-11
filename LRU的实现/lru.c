@@ -95,8 +95,9 @@ int link_insert(struct link * node,int val)
         if( len>0 )
         {
             data->next=node->head->next;
+            printf("更新链表的连接1\n");
             data->next->pre=data;
-            printf("更新链表的连接\n");
+            printf("更新链表的连接2\n");
         }
         
         if(len==MAX)
