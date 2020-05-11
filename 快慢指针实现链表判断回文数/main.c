@@ -13,31 +13,34 @@ struct link
 struct link * link_init(void);
 int link_insert(struct link *,int );
 void link_display(struct link *);
+int  PalindromeNumber(struct link *);
+
 int main()
 {
-    int value[12]={1,2,3,4,5,5,3,2,1,7,5,4};
+    int value[1]={1};
     struct link *data=NULL;
     data=link_init();
     int i;
-    int status;
+    int status=0;
     if(data)
     {
         printf("初始化链表成功\n");
         for(i=0;i<(sizeof(value)/sizeof(int));i++)
         {
             printf("准备插入数据%d\n",value[i]);
-            status=link_insert(data,value[i]);
-            if(status)
-            {
-                printf("插入数据正确\n");
-            }
-            else
-            {
-                printf("插入数据错误\n");
-            }
-            
+            link_insert(data,value[i]);
         }
         link_display(data);
+        status=PalindromeNumber(data);
+        if(status)
+        {
+            printf("回文数\n");
+        }
+        else
+        {
+            printf("不是回文数\n");
+        }
+        
     }
     else
     {
@@ -105,4 +108,45 @@ void link_display(struct link * node)
         }
         printf("输出链表数据结束-------------------------------------------------\n");
     }
+}
+
+int  PalindromeNumber(struct link *node)
+{
+    struct linknode * slow=NULL;
+    struct linknode * fast=NULL;
+    struct linknode * next=NULL;
+    struct linknode * pre=NULL;
+    int flag=0;
+    if(node)
+    {
+        fast=node->head;
+        next=node->head;
+        while (fast->next)
+        {
+            fast=fast->next;
+            if(fast->next)
+            {
+                fast=fast->next;
+                slow=next;
+                next=next->next;
+                slow->next=pre;
+                pre=slow;
+                slow=next;
+            }
+            else
+            {
+                break;
+            }
+        }
+        if(!slow)
+        {
+            return 1;
+        }
+        
+    }
+    else
+    {
+        flag=1;
+    }
+    return flag;
 }
