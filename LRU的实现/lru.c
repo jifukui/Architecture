@@ -96,13 +96,9 @@ int link_insert(struct link * node,int val)
         //printf("设置前向指针成功\n");
         data->next=NULL;
         //printf("初始化后向指针成功\n");
-        /*if( len>0 )
+        if( len>0 )
         {
             data->next=node->head->next;
-        }*/
-        data->next=node->head->next;
-        if(node->head->next)
-        {
             data->next->pre=data;
         }
         //printf("设置后向指针成功\n");
