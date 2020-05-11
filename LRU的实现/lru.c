@@ -113,7 +113,7 @@ int link_insert(struct link * node,int val)
     }
     data->pre=NULL;
     data->next=node->head;
-    if(node->head->pre)
+    if(node->head && node->head->pre)
     {
         node->head->pre=data;
     }
