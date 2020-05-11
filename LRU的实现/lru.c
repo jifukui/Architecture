@@ -134,7 +134,7 @@ void link_display(struct link * node)
         int i=0;
         struct linknode *val=node->head;
         printf("输出当前链表中的数据%d\n",len);
-        while (val&&(i<=len))
+        while (val&&(i<len))
         {
             i++;
             printf("第%d个参数的值为:%d\n",i,val->data);
@@ -157,7 +157,7 @@ int link_removed(struct link *node)
         }
         free(val);
         flag=1;
-        node->length++;
+        node->length--;
     }
     return flag;
 }
