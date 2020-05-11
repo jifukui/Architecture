@@ -27,13 +27,10 @@ int main()
     int status;
     data=link_init();
     int i;
-    printf("数据data的地址为%x\n",data);
     if(status)
     {
         printf("初始化链表成功\n");
-        printf("数组的大小为%d\n",sizeof(value));
         status=link_length(data);
-        printf("获取链表的长度为%d\n",status);
         for(i=0;i<(sizeof(value)/sizeof(int));i++)
         {
             printf("准备插入数据%d\n",value[i]);
@@ -61,9 +58,7 @@ struct link * link_init(void)
 {
     int flag=0;
     struct link * val=NULL;
-    printf("数据的地址为%x\n",val);
     val=(struct link *)malloc(sizeof(struct link));
-    printf("malloc status is %x\n",val);
     if(val)
     {
         val->head=NULL;
@@ -98,13 +93,7 @@ int link_insert(struct link * node,int val)
     {
         printf("插入的数据不在链表中\n");
         data=(struct linknode *)malloc(sizeof(struct linknode));
-        data->data=val;
-        //printf("更新链表的连接1\n");
-        if(len>0)
-        {
-            node->head->pre=data;
-        }
-        //printf("更新链表的连接2\n");
+        data->data=val;  
         if(len==MAX)
         {
             link_removed(node);
