@@ -127,14 +127,13 @@ void link_display(struct link * node)
     if(node)
     {
         int len=link_length(node);
-        int i;
+        int i=0;
         struct linknode *val=node->head;
-        for(i;i<len;i++)
+        while (val)
         {
             printf("第%d个参数的值为:%d\n",(i+1),val->data);
             val=val->next;
         }
-
     }
 }
 int link_removed(struct link *node)
