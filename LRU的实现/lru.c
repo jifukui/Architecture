@@ -102,7 +102,7 @@ int link_insert(struct link * node,int val)
         data->next=NULL; 
         data->next=node->head;
         printf("更新链表的连接1\n");
-        data->next->pre=data;
+        node->head->pre=data;
         printf("更新链表的连接2\n");
         if(len==MAX)
         {
