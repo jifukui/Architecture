@@ -23,7 +23,6 @@ int main()
     if(data)
     {
         printf("初始化链表成功\n");
-        status=link_length(data);
         for(i=0;i<(sizeof(value)/sizeof(int));i++)
         {
             printf("准备插入数据%d\n",value[i]);
@@ -46,6 +45,21 @@ int main()
     }
     return 0;
     
+}
+
+
+struct link * link_init(void)
+{
+    int flag=0;
+    struct link * val=NULL;
+    val=(struct link *)malloc(sizeof(struct link));
+    if(val)
+    {
+        val->head=NULL;
+        val->length=0;
+        flag=1;
+    }
+    return val;
 }
 
 int link_insert(struct link * node,int val)
