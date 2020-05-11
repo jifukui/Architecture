@@ -88,7 +88,10 @@ int link_insert(struct link * node,int val)
         else
         {
             data->pre->next=data->next;
-            data->next->pre=data->pre;
+            if(data->next)
+            {
+                data->next->pre=data->pre;
+            }
         }
         data->pre=NULL;
         node->head=data;
