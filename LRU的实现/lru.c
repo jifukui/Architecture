@@ -155,6 +155,7 @@ int link_removed(struct link *node)
         {
             val=val->next;
         }
+        printf("")
         val->pre->next=NULL;
         free(val);
         flag=1;
