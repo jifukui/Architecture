@@ -13,7 +13,7 @@ struct link
     int length;
 };
 
-int link_init(struct link *);
+struct link * link_init(void);
 int link_insert(struct link *,int );
 int link_removed(struct link *);
 int link_length(struct link *);
@@ -25,7 +25,7 @@ int main()
     int value[12]={1,2,3,4,5,5,3,2,1,7,5,4};
     struct link *data=NULL;
     int status;
-    status=link_init(data);
+    data=link_init();
     int i;
     printf("数据data的地址为%x\n",data);
     if(status)
@@ -57,11 +57,12 @@ int main()
     
 }
 
-int link_init(struct link * val)
+struct link * link_init(void)
 {
     int flag=0;
+    struct link * val=NULL;
     printf("数据的地址为%x\n",val);
-    &val=(struct link *)malloc(sizeof(struct link));
+    val=(struct link *)malloc(sizeof(struct link));
     printf("malloc status is %x\n",val);
     if(val)
     {
@@ -69,7 +70,7 @@ int link_init(struct link * val)
         val->length=0;
         flag=1;
     }
-    return flag;
+    return val;
 }
 
 int link_insert(struct link * node,int val)
