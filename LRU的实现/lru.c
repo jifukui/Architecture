@@ -94,6 +94,7 @@ int link_insert(struct link * node,int val)
             }
         }
         data->pre=NULL;
+        data->next=node->head;
         node->head=data;
     }
     else
