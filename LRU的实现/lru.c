@@ -127,7 +127,7 @@ void link_display(struct link * node)
         int i=0;
         struct linknode *val=node->head;
         printf("输出当前链表中的数据--------------------------------------------\n");
-        while (val&&(i<len))
+        while (val)
         {
             i++;
             printf("第%d个参数的值为:%d\n",i,val->data);
