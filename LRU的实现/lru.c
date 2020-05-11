@@ -71,7 +71,7 @@ int link_init(struct link * val)
 
 int link_insert(struct link * node,int val)
 {
-    int len=link_length();
+    int len=link_length(node);
     if(len==MAX)
     {
 
