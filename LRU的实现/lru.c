@@ -81,7 +81,15 @@ int link_insert(struct link * node,int val)
     if(data)
     {
         printf("插入的数据在链表中\n");
-        data->next=node->head;
+        if(data==head)
+        {
+            return 1;
+        }
+        else
+        {
+            data->pre->next=data->next;
+            data->next->pre=data->pre;
+        }
         data->pre=NULL;
         node->head=data;
     }
@@ -91,15 +99,11 @@ int link_insert(struct link * node,int val)
         data=(struct linknode *)malloc(sizeof(struct linknode));
         data->data=val;
         data->pre=NULL;
-        data->next=NULL;
-        if( len>0 )
-        {
-            data->next=node->head;
-            printf("更新链表的连接1\n");
-            data->next->pre=data;
-            printf("更新链表的连接2\n");
-        }
-        
+        data->next=NULL; 
+        data->next=node->head;
+        printf("更新链表的连接1\n");
+        data->next->pre=data;
+        printf("更新链表的连接2\n");
         if(len==MAX)
         {
             link_removed(node);
