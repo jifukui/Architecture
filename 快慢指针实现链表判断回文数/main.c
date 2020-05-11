@@ -118,6 +118,7 @@ int  PalindromeNumber(struct link *node)
     struct linknode * pre=NULL;
     int flag=1;
     int i=0;
+    int first=0;
     if(node)
     {
         fast=node->head;
@@ -133,8 +134,17 @@ int  PalindromeNumber(struct link *node)
                 printf("first address is %u,the second address is %u\n",slow,next);
                 slow->next=pre;
                 pre=slow;
-                slow=next;
-                next=next->next;
+                
+                //next=next->next;
+                
+                if(!first)
+                {
+                    slow=next;
+                    slow->next=pre;
+                    next=next->next;
+                    first=1;
+
+                }
                 printf("first address is %u,the second address is %u,the third address is %u\n",slow,next,pre);
             }
             else
