@@ -25,11 +25,12 @@ int main()
     struct link *data=NULL;
     int status;
     status=link_init(data);
+    int i;
     if(status)
     {
         printf("初始化链表成功\n");
         printf("数组的大小为%d\n",sizeof(value));
-        for(int i=0;i<(sizeof(value)/sizeof(int));i++)
+        for(i=0;i<(sizeof(value)/sizeof(int));i++)
         {
 
         }
