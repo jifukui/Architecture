@@ -30,7 +30,7 @@ int main()
     {
         printf("初始化链表成功\n");
         printf("数组的大小为%d\n",sizeof(value));
-        status=link_length(value);
+        status=link_length(data);
         printf("获取链表的长度为%d\n",status);
         for(i=0;i<(sizeof(value)/sizeof(int));i++)
         {
@@ -69,7 +69,7 @@ int link_init(struct link * val)
     return flag;
 }
 
-int link_insert(struct link *,int )
+int link_insert(struct link * node,int val)
 {
     int len=link_length();
     if(len==MAX)
