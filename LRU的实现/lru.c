@@ -44,7 +44,7 @@ int link_init(struct link * val)
     {
         val->head=NULL;
         val->pre=NULL;
-        link->length=0;
+        val->length=0;
         flag=1;
     }
     return flag;
