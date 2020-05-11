@@ -3,7 +3,7 @@
 struct linknode
 {
     int data;
-    linknode *next;
+    struct linknode *next;
 };
 
 struct link
@@ -22,7 +22,7 @@ void link_display(struct link *);
 int main()
 {
     int vlaue[12]={1,2,3,4,5,5,3,2,1,7,5,4};
-    link *data=null;
+    struct link *data=NULL;
     int status;
     status=link_init(data);
     if(status)
@@ -36,14 +36,14 @@ int main()
     return 0;
     
 }
-int link_init(structlink * val)
+int link_init(struct link * val)
 {
     int flag=0;
     val=(struct link *)malloc(sizeof(struct link));
     if(val)
     {
-        val->head=null;
-        val->pre=null;
+        val->head=NULL;
+        val->pre=NULL;
         link->length=0;
         flag=1;
     }
