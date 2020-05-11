@@ -130,9 +130,12 @@ int  PalindromeNumber(struct link *node)
                 fast=fast->next;
                 slow=next;
                 next=next->next;
+                printf("first address is %u,the second address is %u\n",slow,next);
                 slow->next=pre;
                 pre=slow;
                 slow=next;
+                next=next->next;
+                printf("first address is %u,the second address is %u,the third address is %u\n",slow,next,pre);
             }
             else
             {
@@ -146,7 +149,7 @@ int  PalindromeNumber(struct link *node)
         else
         {
             pre=slow;
-            while (next)
+            while (next&&pre)
             {
                 i++;
                 printf("当前比较第%d次,前指针的值为%d,后指针的值为%d\n",i,pre->data,next->data);
