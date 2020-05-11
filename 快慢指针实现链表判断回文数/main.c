@@ -17,7 +17,7 @@ int  PalindromeNumber(struct link *);
 
 int main()
 {
-    int value[1]={1};
+    int value[3]={1,2,1};
     struct link *data=NULL;
     data=link_init();
     int i;
