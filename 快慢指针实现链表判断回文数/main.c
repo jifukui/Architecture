@@ -67,6 +67,7 @@ int link_insert(struct link * node,int val)
     struct linknode *data=NULL;
     if(node)
     {
+        data=(struct linknode *)malloc(sizeof(linknode));
         if(data)
         {
             data->data=val;
