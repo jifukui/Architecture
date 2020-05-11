@@ -21,7 +21,7 @@ void link_display(struct link *);
 
 int main()
 {
-    int vlaue[12]={1,2,3,4,5,5,3,2,1,7,5,4};
+    int value[12]={1,2,3,4,5,5,3,2,1,7,5,4};
     struct link *data=NULL;
     int status;
     status=link_init(data);
@@ -31,7 +31,7 @@ int main()
         printf("数组的大小为%d\n",sizeof(value));
         for(int i=0;i<(sizeof(value)/sizeof(int));i++)
         {
-            
+
         }
     }
     else
