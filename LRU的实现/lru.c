@@ -101,12 +101,12 @@ int link_insert(struct link * node,int val)
         data->pre=NULL;
         data->next=NULL; 
         data->next=node->head;
-        printf("更新链表的连接1\n");
+        //printf("更新链表的连接1\n");
         if(len>0)
         {
             node->head->pre=data;
         }
-        printf("更新链表的连接2\n");
+        //printf("更新链表的连接2\n");
         if(len==MAX)
         {
             link_removed(node);
@@ -133,8 +133,8 @@ void link_display(struct link * node)
         int len=link_length(node);
         int i=0;
         struct linknode *val=node->head;
-        printf("输出当前链表中的数据\n");
-        while (val&&i<=len)
+        printf("输出当前链表中的数据%d\n",len);
+        while (val&&(i<=len))
         {
             i++;
             printf("第%d个参数的值为:%d\n",i,val->data);
