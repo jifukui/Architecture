@@ -87,28 +87,28 @@ int link_insert(struct link * node,int val)
     }
     else
     {
-        printf("插入的数据不再链表中\n");
+        //printf("插入的数据不再链表中\n");
         data=(struct linknode *)malloc(sizeof(struct linknode));
-        printf("初始化数据data的状态%d\n",data);
+        //printf("初始化数据data的状态%d\n",data);
         data->data=val;
-        printf("更新数据成功\n");
+        //printf("更新数据成功\n");
         data->pre=NULL;
-        printf("设置前向指针成功\n");
+        //printf("设置前向指针成功\n");
         data->next=NULL;
-        printf("初始化后向指针成功\n");
+        //printf("初始化后向指针成功\n");
         if( len>0 )
         {
             data->next=node->head->next;
         }
-        printf("设置后向指针成功\n");
+        //printf("设置后向指针成功\n");
         if(len==MAX)
         {
             link_removed(node);
         }
         node->head=data;
-        printf("更新头指针数据成功\n");
+        //printf("更新头指针数据成功\n");
         node->length++;
-        printf("更新数据长度成功\n");
+        //printf("更新数据长度成功\n");
     }
     return 1;    
 }
@@ -131,7 +131,8 @@ void link_display(struct link * node)
         struct linknode *val=node->head;
         while (val)
         {
-            printf("第%d个参数的值为:%d\n",(i+1),val->data);
+            i++;
+            printf("第%d个参数的值为:%d\n",i,val->data);
             val=val->next;
         }
     }
