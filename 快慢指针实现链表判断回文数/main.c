@@ -140,8 +140,8 @@ int  PalindromeNumber(struct link *node)
                 if(!first)
                 {
                     slow=next;
-                    slow->next=pre;
                     next=next->next;
+                    slow->next=pre;
                     first=1;
 
                 }
