@@ -153,7 +153,6 @@ int link_removed(struct link *node)
         /**找到最后一个节点*/
         while (val->next)
         {
-            i++;
             val=val->next;
         }
         free(val);
