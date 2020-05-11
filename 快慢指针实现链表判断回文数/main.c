@@ -74,6 +74,11 @@ int link_insert(struct link * node,int val)
             data->next=NULL;
             struct linknode *value=NULL;
             value=node->head;
+            if(!value)
+            {
+                node->head=data;
+                return 1;
+            }
             while (value->next)
             {
                 value=value->next;
