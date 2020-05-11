@@ -88,15 +88,21 @@ int link_insert(struct link * node,int val)
         data=(struct linknode *)malloc(sizeof(struct linknode));
         printf("初始化数据data的状态%d\n",data);
         data->data=val;
+        printf("更新数据成功\n");
         data->pre=NULL;
+        printf("设置前向指针成功\n");
         data->next=NULL;
+        printf("初始化后向指针成功\n");
         data->next=node->head->next;
+        printf("设置后向指针成功\n");
         if(len==MAX)
         {
             link_removed(node);
         }
         node->head=data;
+        printf("更新头指针数据成功\n");
         node->length++;
+        printf("更新数据长度成功\n");
     }
     return 1;    
 }
