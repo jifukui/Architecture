@@ -19,6 +19,7 @@ int main()
     struct link *data=NULL;
     data=link_init();
     int i;
+    int status;
     if(data)
     {
         printf("初始化链表成功\n");
