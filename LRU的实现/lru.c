@@ -27,6 +27,7 @@ int main()
     int status;
     status=link_init(data);
     int i;
+    printf("数据data的地址为%x\n",data);
     if(status)
     {
         printf("初始化链表成功\n");
