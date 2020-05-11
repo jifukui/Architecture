@@ -133,7 +133,7 @@ void link_display(struct link * node)
             printf("第%d个参数的值为:%d\n",i,val->data);
             val=val->next;
         }
-        printf("输出链表数据错误-------------------------------------------------\n");
+        printf("输出链表数据结束-------------------------------------------------\n");
     }
 }
 int link_removed(struct link *node)
