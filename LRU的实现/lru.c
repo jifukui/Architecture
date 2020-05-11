@@ -81,7 +81,7 @@ int link_insert(struct link * node,int val)
     if(data)
     {
         printf("插入的数据在链表中\n");
-        if(data==head)
+        if(data==node->head)
         {
             return 1;
         }
@@ -130,6 +130,7 @@ void link_display(struct link * node)
         int len=link_length(node);
         int i=0;
         struct linknode *val=node->head;
+        printf("输出当前链表中的数据\n");
         while (val)
         {
             i++;
