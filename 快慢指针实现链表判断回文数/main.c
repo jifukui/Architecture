@@ -117,6 +117,7 @@ int  PalindromeNumber(struct link *node)
     struct linknode * next=NULL;
     struct linknode * pre=NULL;
     int flag=0;
+    int i=0;
     if(node)
     {
         fast=node->head;
@@ -141,6 +142,22 @@ int  PalindromeNumber(struct link *node)
         if(!slow)
         {
             return 1;
+        }
+        else
+        {
+            pre=slow;
+            while (next)
+            {
+                i++;
+                printf("当前比较第%d次,前指针的值为%d,后指针的值为%d\n",i,pre->next,next->next);
+                if(pre->data!=next->data)
+                {
+                    return 0;
+                }
+                pre=pre->next;
+                next=next->next;
+            }
+            
         }
         
     }
