@@ -60,6 +60,7 @@ int main()
 int link_init(struct link * val)
 {
     int flag=0;
+    printf("数据的地址为%x\n",val);
     val=(struct link *)malloc(sizeof(struct link));
     printf("malloc status is %x\n",val);
     if(val)
