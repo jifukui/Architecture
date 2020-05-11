@@ -103,7 +103,7 @@ void link_display(struct link * node)
         while (val)
         {
             i++;
-            printf("第%d个参数的值为:%d\n",i,val->data);
+            printf("第%d个参数的值为:%d地址为%u\n",i,val->data,val);
             val=val->next;
         }
         printf("输出链表数据结束-------------------------------------------------\n");
