@@ -40,6 +40,7 @@ int link_init(struct link * val)
 {
     int flag=0;
     val=(struct link *)malloc(sizeof(struct link));
+    printf("malloc status is %x\n",val);
     if(val)
     {
         val->head=NULL;
