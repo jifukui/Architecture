@@ -36,7 +36,7 @@ int main()
         for(i=0;i<(sizeof(value)/sizeof(int));i++)
         {
             printf("准备插入数据%d\n",value[i]);
-            status=link_insert(value[i]);
+            status=link_insert(data,value[i]);
             if(status)
             {
                 printf("插入数据正确\n");
@@ -45,7 +45,7 @@ int main()
             {
                 printf("插入数据错误\n");
             }
-            link_display(node);
+            link_display(data);
         }
     }
     else
@@ -115,7 +115,7 @@ void link_display(struct link * node)
     {
         int len=link_length(node);
         int i;
-        struct link_node val=node->head;
+        struct link_node *val=node->head;
         for(i;i<len;i++)
         {
             printf("第%d个参数的值为:%d\n",(i+1);val->data);
