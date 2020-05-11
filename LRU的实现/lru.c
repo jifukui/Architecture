@@ -86,6 +86,7 @@ int link_insert(struct link * node,int val)
     {
         printf("插入的数据不再链表中\n");
         data=(struct linknode *)malloc(sizeof(struct linknode));
+        printf("初始化数据data的状态%d\n",data);
         data->data=val;
         data->pre=NULL;
         data->next=NULL;
