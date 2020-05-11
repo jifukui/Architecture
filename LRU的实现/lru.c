@@ -159,8 +159,8 @@ int link_removed(struct link *node)
         {
             val=val->next;
         }
-        free(val);
         val->pre->next=NULL;
+        free(val);
         flag=1;
         node->length--;
     }
