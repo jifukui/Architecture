@@ -8,16 +8,16 @@ struct linknode
 
 struct link
 {
-    linknode *head;
-    linknode *pre;
+    struct linknode *head;
+    struct linknode *pre;
     int length;
 };
 
-int link_init(link *);
-int link_insert(link *,int );
-int link_removed(link *);
-int link_length(link *);
-void link_display(link *);
+int link_init(struct link *);
+int link_insert(struct link *,int );
+int link_removed(struct link *);
+int link_length(struct link *);
+void link_display(struct link *);
 
 int main()
 {
@@ -36,10 +36,10 @@ int main()
     return 0;
     
 }
-int link_init(link * val)
+int link_init(structlink * val)
 {
     int flag=0;
-    val=(link *)malloc(sizeof(link));
+    val=(struct link *)malloc(sizeof(struct link));
     if(val)
     {
         val->head=null;
