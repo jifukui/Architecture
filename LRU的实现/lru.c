@@ -83,10 +83,10 @@ int link_insert(struct link *,int )
     
 }
 
-int link_length(struct link *)
+int link_length(struct link * val)
 {
-    if(struct link)
+    if(val)
     {
-        return (struct link)->length;
+        return val->length;
     }
 }
