@@ -158,6 +158,7 @@ int  PalindromeNumber(struct link *node)
         }
         else
         {
+            pre=pre->next;
             while (next&&pre)
             {
                 i++;
