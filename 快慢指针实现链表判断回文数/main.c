@@ -142,6 +142,7 @@ int  PalindromeNumber(struct link *node)
                     slow=next;
                     next=next->next;
                     slow->next=pre;
+                    pre=slow;
                     first=1;
 
                 }
