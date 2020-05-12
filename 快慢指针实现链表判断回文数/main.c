@@ -122,53 +122,31 @@ int  PalindromeNumber(struct link *node)
     if(node)
     {
         fast=node->head;
-        next=node->head;
-        while (fast->next)
+        slow=node->head;
+        while (fast&&fast->next)
         {
-            fast=fast->next;
-            if(fast->next)
-            {
-                fast=fast->next;
-                slow=next;
-                next=next->next;
-                printf("first address is %u,the second address is %u\n",slow,next);
-                slow->next=pre;
-                pre=slow;
-                
-                //next=next->next;
-                
-                if(!first)
-                {
-                    slow=next;
-                    next=next->next;
-                    slow->next=pre;
-                    pre=slow;
-                    first=1;
-
-                }
-                printf("first address is %u,the second address is %u,the third address is %u\n",slow,next,pre);
-            }
-            else
-            {
-                break;
-            }
+            fast=fast->next->next;
+            next=slow->next;
+            slow->next=pre;
+            pre=slow;
+            slow=next;
         }
-        if(!slow)
+        if(fast)
         {
-            return 1;
+            slow=slow->next;
         }
         else
         {
-            pre=pre->next;
-            while (next&&pre)
+           
+            while (next&&slow)
             {
                 i++;
-                printf("当前比较第%d次,前指针的值为%d,后指针的值为%d\n",i,pre->data,next->data);
-                if(pre->data!=next->data)
+                printf("当前比较第%d次,前指针的值为%d,后指针的值为%d\n",i,slow->data,next->data);
+                if(slow->data!=next->data)
                 {
                     return 0;
                 }
-                pre=pre->next;
+                slow=slow->next;
                 next=next->next;
             }
             
