@@ -138,16 +138,16 @@ int  PalindromeNumber(struct link *node)
         else
         {
            
-            while (next&&slow)
+            while (pre&&slow)
             {
                 i++;
-                printf("当前比较第%d次,前指针的值为%d,后指针的值为%d\n",i,slow->data,next->data);
-                if(slow->data!=next->data)
+                printf("当前比较第%d次,前指针的值为%d,后指针的值为%d\n",i,pre->data,slow->data);
+                if(pre->data!=slow->data)
                 {
                     return 0;
                 }
+                pre=pre->next;
                 slow=slow->next;
-                next=next->next;
             }
             
         }
